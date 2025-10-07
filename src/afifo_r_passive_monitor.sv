@@ -12,21 +12,19 @@ class afifo_r_passive_monitor extends uvm_monitor;
   endfunction
   
   function void build_phase(uvm_phase phase);
-		super.build_phase(phase);
-    if(!uvm_config_db#(virtual afifo_if)::get(this, "", "vif", vif))
-			`uvm_fatal("NOVIF",{"virtual interface must be set for: ",get_full_name(),".vif"});
+	super.build_phase(phase);
+    if(!uvm_config_db#(virtual afifo_if)::get(this, "", "vif", vif))`uvm_fatal("NOVIF",{"virtual interface must be set for: ",get_full_name(),".vif"});
   endfunction
 
   task run_phase(uvm_phase phase);
     repeat(4)@(vif.rmonitor_cb);
     forever begin
-      //repeat(3)@(vif.monitor_cb);
       seq.rdata = vif.rmonitor_cb.rdata;
       seq.rempty = vif.rmonitor_cb.rempty;
+      seq.rinc = vif.rmonitor_cb.rinc;
       r_passive_port.write(seq);
-      //seq.print();
-      `uvm_info(get_type_name(), $sformatf("*********************w_passive_monitor******************\n rempty_n = %0d, rdata = %0d", vif.rmonitor_cb.rempty, vif.rmonitor_cb.rdata), UVM_MEDIUM)
-      repeat(2)@(vif.rmonitor_cb);
+      `uvm_info(get_type_name(), $sformatf("Read monitor rempty = %0d, rdata = %0d rinc = %0d", vif.rmonitor_cb.rempty, vif.rmonitor_cb.rdata,vif.rmonitor_cb.rinc ), UVM_MEDIUM)
+      repeat(1)@(vif.rmonitor_cb);
     end
   endtask
 endclass
