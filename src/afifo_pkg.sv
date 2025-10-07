@@ -13,8 +13,6 @@ package afifo_pkg;
   `include "afifo_wdriver.sv"
   `include "afifo_rdriver.sv"
   `include "afifo_w_active_monitor.sv"
-  `include "afifo_w_passive_monitor.sv"
-  `include "afifo_r_active_monitor.sv"
   `include "afifo_r_passive_monitor.sv"
   `include "afifo_w_agent.sv"
   `include "afifo_r_agent.sv"
@@ -22,4 +20,5 @@ package afifo_pkg;
   `include "afifo_subscriber.sv"
   `include "afifo_env.sv"
   `include "afifo_test.sv"
+
 endpackage
