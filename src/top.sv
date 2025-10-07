@@ -2,7 +2,6 @@
 `include "afifo_if.sv"
 `include "afifo_pkg.sv"
 `include "design.sv"
-//`include "uvm_macros.svh"
 
 import uvm_pkg::*;
 import afifo_pkg::*;
@@ -30,7 +29,8 @@ module top();
     .rinc  (vif.rinc),
     .rempty (vif.rempty)
   );
-
+  
+  bind vif afifo_assertions ASSERTION (.*);
   always #10  wclk = ~wclk;
   always #20  rclk = ~rclk;
 
@@ -57,7 +57,7 @@ module top();
 
   initial
   begin
-    run_test("random_test");
+    run_test("test1");
     #100 $finish;
   end
  endmodule
