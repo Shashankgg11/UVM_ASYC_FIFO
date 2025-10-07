@@ -16,11 +16,12 @@ class afifo_base_test extends uvm_test;
 		print();
 	endfunction
 endclass
-//---------------------------------------------------------------------------------------------------------
-class random_test extends afifo_base_test;
-  `uvm_component_utils(random_test)
 
-  function new(string name = "random_test", uvm_component parent = null);
+//---------------------------------------------------------------------------------------------------------
+class test1 extends afifo_base_test;
+  `uvm_component_utils(test1)
+
+  function new(string name = "test1", uvm_component parent = null);
 		super.new(name, parent);
 	endfunction
 
@@ -29,10 +30,10 @@ class random_test extends afifo_base_test;
 	  afifo_virtual_seq vseq;
 	  super.run_phase(phase);
 	  phase.raise_objection(this, "Objection Raised");
-      repeat(20)begin
+      //repeat(20)begin
 		vseq = afifo_virtual_seq::type_id::create("vseq");
     	vseq.start(env.vseqr);
-      end
+      //end
 	  phase.drop_objection(this, "Objection Dropped");
 	endtask
 
