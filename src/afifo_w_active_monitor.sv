@@ -13,22 +13,19 @@ class afifo_w_active_monitor extends uvm_monitor;
 
   function void build_phase(uvm_phase phase);
 		super.build_phase(phase);
-    	if(!uvm_config_db#(virtual afifo_if)::get(this, "", "vif", vif))
-			`uvm_fatal("NOVIF",{"virtual interface must be set for: ",get_full_name(),".vif"});
+    	if(!uvm_config_db#(virtual afifo_if)::get(this, "", "vif", vif))`uvm_fatal("NOVIF",{"virtual interface must be set for: ",get_full_name(),".vif"});
   endfunction
   
   task run_phase(uvm_phase phase);
     repeat(2)@(vif.wmonitor_cb);
     forever begin
-      //repeat(2)@(vif.monitor_cb);
         seq.wdata  = vif.wmonitor_cb.wdata;
         seq.winc = vif.wmonitor_cb.winc;
+        seq.wfull = vif.wmonitor_cb.wfull;
         w_active_port.write(seq);
-      `uvm_info(get_type_name(), $sformatf("*********************w_Active_monitor******************\n wdata = %0d, winc = %0d", vif.wmonitor_cb.wdata, vif.wmonitor_cb.winc), UVM_MEDIUM)
-        seq.print();
-      repeat(2)@(vif.wmonitor_cb);
+        `uvm_info(get_type_name(), $sformatf("Write monitor wdata = %0d, winc = %0d wfull = %0d", vif.wmonitor_cb.wdata, vif.wmonitor_cb.winc, vif.wmonitor_cb.wfull), UVM_MEDIUM)
+        repeat(1)@(vif.wmonitor_cb);
       
-      
-      end
+    end
   endtask
 endclass
