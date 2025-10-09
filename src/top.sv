@@ -2,18 +2,19 @@
 `include "afifo_if.sv"
 `include "afifo_pkg.sv"
 `include "design.sv"
-
+`include "bind_afifo.sv"
+`include "afifo_assertions.sv"
 import uvm_pkg::*;
 import afifo_pkg::*;
 
 module top();
-  
+
   localparam DSIZE = 8;
   localparam ASIZE = 4;
-  
+
   bit wclk, rclk, wrst_n, rrst_n;
 
- 
+
   afifo_if  vif(rclk, wclk, rrst_n, wrst_n);
 
   FIFO DUT(
@@ -22,15 +23,15 @@ module top();
     .wdata  (vif.wdata),
     .winc  (vif.winc),
     .wfull  (vif.wfull),
-    
+
     .rclk(rclk),
     .rrst_n (rrst_n),
     .rdata  (vif.rdata),
     .rinc  (vif.rinc),
     .rempty (vif.rempty)
   );
-  
-  bind vif afifo_assertions ASSERTION (.*);
+
+
   always #10  wclk = ~wclk;
   always #20  rclk = ~rclk;
 
@@ -57,7 +58,7 @@ module top();
 
   initial
   begin
-    run_test("test1");
+    run_test("write_read_test");
     #100 $finish;
   end
  endmodule
