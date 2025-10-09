@@ -18,26 +18,66 @@ class afifo_base_test extends uvm_test;
 endclass
 
 //---------------------------------------------------------------------------------------------------------
-class test1 extends afifo_base_test;
-  `uvm_component_utils(test1)
+class write_only_test extends afifo_base_test;
+  `uvm_component_utils(write_only_test)
+  
+  function new(string name = "write_only_test", uvm_component parent = null);
+	super.new(name, parent);
+  endfunction
 
-  function new(string name = "test1", uvm_component parent = null);
-		super.new(name, parent);
-	endfunction
+  task run_phase(uvm_phase phase);
+    afifo_virtual_seq vseq;
+    phase.raise_objection(this);
 
-	virtual task run_phase(uvm_phase phase);
-      
-	  afifo_virtual_seq vseq;
-	  super.run_phase(phase);
-	  phase.raise_objection(this, "Objection Raised");
-      //repeat(20)begin
-		vseq = afifo_virtual_seq::type_id::create("vseq");
-    	vseq.start(env.vseqr);
-      //end
-	  phase.drop_objection(this, "Objection Dropped");
-	endtask
+    vseq = afifo_virtual_seq::type_id::create("vseq");
+    vseq.run_write = 1;
+    vseq.run_read  = 0;
 
-	virtual function void end_of_elaboration();
-		print();
-	endfunction
+    vseq.start(env.vseqr);
+
+    phase.drop_objection(this);
+  endtask
+endclass
+
+
+class read_only_test extends afifo_base_test;
+  `uvm_component_utils(read_only_test)
+  
+  function new(string name = "read_only_test", uvm_component parent = null);
+	super.new(name, parent);
+  endfunction
+
+  task run_phase(uvm_phase phase);
+    afifo_virtual_seq vseq;
+    phase.raise_objection(this);
+
+    vseq = afifo_virtual_seq::type_id::create("vseq");
+    vseq.run_write = 0; 
+    vseq.run_read  = 1;
+
+    vseq.start(env.vseqr);
+
+    phase.drop_objection(this);
+  endtask
+endclass
+
+class write_read_test extends afifo_base_test;
+  `uvm_component_utils(write_read_test)
+  
+  function new(string name = "write_read_test", uvm_component parent = null);
+	super.new(name, parent);
+  endfunction
+
+  task run_phase(uvm_phase phase);
+    afifo_virtual_seq vseq;
+    phase.raise_objection(this);
+
+    vseq = afifo_virtual_seq::type_id::create("vseq");
+    vseq.run_write = 1;
+    vseq.run_read  = 1;  
+
+    vseq.start(env.vseqr);
+
+    phase.drop_objection(this);
+  endtask
 endclass
