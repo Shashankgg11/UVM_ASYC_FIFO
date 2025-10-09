@@ -16,7 +16,7 @@ package afifo_pkg;
   `include "afifo_r_passive_monitor.sv"
   `include "afifo_w_agent.sv"
   `include "afifo_r_agent.sv"
-  `include "afifo_scoreboard.sv"    
+  `include "afifo_scoreboard.sv"
   `include "afifo_subscriber.sv"
   `include "afifo_env.sv"
   `include "afifo_test.sv"
