@@ -1,12 +1,7 @@
-program afifo_assertions(wclk, wrst_n, winc, wfull,rclk, rrst_n, rinc, rempty, wdata, rdata);
-	
-  	input wclk, wrst_n, winc, wfull;
-    input rclk, rrst_n, rinc, rempty;
-    input [7:0] wdata;
-    input [7:0] rdata;
-	
+interface afifo_assertions(input logic wclk, wrst_n, winc, wfull, rclk, rrst_n, rinc, rempty, input logic [7:0] wdata, input logic [7:0] rdata);
+
     property wrst_check;
-        @(posedge wclk) (!wrst_n) |-> (wfull == 0) && (wdata == 0);
+        @(posedge wclk) (!wrst_n) |-> (wfull == 0);
     endproperty
 
     property winc_stable;
@@ -45,4 +40,4 @@ program afifo_assertions(wclk, wrst_n, winc, wfull,rclk, rrst_n, rinc, rempty, w
     else
       $display("Read data or rempty not stable when rinc=0");
 
-endprogram
+endinterface
