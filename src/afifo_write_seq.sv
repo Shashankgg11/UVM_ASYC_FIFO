@@ -9,7 +9,7 @@ class afifo_write_seq extends uvm_sequence #(afifo_seq_item);
     repeat (100) begin
       req = afifo_seq_item#(.DSIZE(8))::type_id::create("req");
       start_item(req);
-      req.randomize() with { winc == 1;};
+      void'(req.randomize() with { winc == 1;});
       finish_item(req);
     end
   endtask
@@ -26,7 +26,7 @@ class afifo_w_seq1 extends uvm_sequence #(afifo_seq_item);
     repeat (100) begin
       req = afifo_seq_item#(.DSIZE(8))::type_id::create("req");
       start_item(req);
-      req.randomize() with { winc == 0;};
+      void'(req.randomize() with { winc == 0;});
       finish_item(req);
     end
   endtask

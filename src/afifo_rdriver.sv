@@ -25,7 +25,7 @@ class afifo_rdriver extends uvm_driver #(afifo_seq_item);
 
 	virtual task drive();
       repeat(1) @(rvif.rdriver_cb);
-		rvif.rdriver_cb.rinc <= seq.rinc;
-        `uvm_info(get_type_name(), $sformatf("Read DRIVER sent to DUT: rinc = %0d ", rvif.rdriver_cb.rinc), UVM_MEDIUM)
+		rvif.rinc <= seq.rinc;
+        `uvm_info(get_type_name(), $sformatf("Read DRIVER sent to DUT: rinc = %0d ", rvif.rinc), UVM_MEDIUM)
 	endtask
 endclass

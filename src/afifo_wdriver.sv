@@ -25,8 +25,8 @@ class afifo_wdriver extends uvm_driver #(afifo_seq_item);
 
 	virtual task drive();
       repeat(1) @(wvif.wdriver_cb);
-		wvif.wdriver_cb.wdata <= seq.wdata;
-		wvif.wdriver_cb.winc <= seq.winc;
-      `uvm_info(get_type_name(), $sformatf("Write_Driver DRIVER sent to DUT:, wdata = %0d, winc = %0d", wvif.wdriver_cb.wdata, wvif.wdriver_cb.winc), UVM_MEDIUM)
+		wvif.wdata <= seq.wdata;
+		wvif.winc <= seq.winc;
+      `uvm_info(get_type_name(), $sformatf("Write_Driver DRIVER sent to DUT:, wdata = %0d, winc = %0d", wvif.wdata, wvif.winc), UVM_MEDIUM)
 	endtask
 endclass
