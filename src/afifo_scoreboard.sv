@@ -32,8 +32,14 @@ class afifo_scoreboard extends uvm_component;
         `uvm_info(get_type_name(),$sformatf("WRITE_IN: wdata=%0h (queue size=%0d)",item_copy.wdata, ref_q.size()),UVM_LOW)
       end
       else begin
-        if (t.wfull) `uvm_info(get_full_name(),"FIFO FULL signal is correct",UVM_MEDIUM)
-        else `uvm_info(get_full_name(),"FIFO FULL signal is not correct",UVM_MEDIUM)  
+        if((t.wfull == 1) && (ref_q.size() == `DEPTH))begin
+	    `uvm_info(get_full_name(),"FIFO FULL signal is correct",UVM_MEDIUM)
+	    match++;
+	end
+        else begin
+	    `uvm_info(get_full_name(),"FIFO FULL signal is not correct",UVM_MEDIUM) 
+	    mismatch++;
+        end 
       end
      end
           
@@ -57,8 +63,14 @@ class afifo_scoreboard extends uvm_component;
           end
         end
         else begin
-          if(t.rempty) `uvm_info(get_full_name(),"FIFO EMPTY signal is correct",UVM_MEDIUM)
-          else `uvm_info(get_full_name(),"FIFO EMPTY signal is not correct",UVM_MEDIUM)  
+          if((t.rempty == 1) && (ref_q.size() == 0))begin
+	     `uvm_info(get_full_name(),"FIFO EMPTY signal is correct",UVM_MEDIUM)
+	     match++;
+          end
+          else begin
+	     `uvm_info(get_full_name(),"FIFO EMPTY signal is not correct",UVM_MEDIUM)
+              mismatch++;
+	  end  
         end
      end
           

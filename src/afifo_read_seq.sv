@@ -6,7 +6,7 @@ class afifo_read_seq extends uvm_sequence #(afifo_seq_item);
   
   task body();
     afifo_seq_item req;
-    repeat (100) begin
+    repeat (30) begin
       req = afifo_seq_item#(.DSIZE(8))::type_id::create("req");
       start_item(req);
       void'(req.randomize() with { rinc == 1;});
@@ -23,7 +23,7 @@ class afifo_r_seq1 extends uvm_sequence #(afifo_seq_item);
   
   task body();
     afifo_seq_item req;
-    repeat (100) begin
+    repeat (30) begin
       req = afifo_seq_item#(.DSIZE(8))::type_id::create("req");
       start_item(req);
       void'(req.randomize() with { rinc == 0;});

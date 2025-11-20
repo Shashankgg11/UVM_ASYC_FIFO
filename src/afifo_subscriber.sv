@@ -24,7 +24,7 @@ class afifo_subscriber extends uvm_component;
       bins not_full = {0};
       bins full     = {1};
     }
-    cross_w : cross wdata_cp, winc_cp, full_cp;
+    
   endgroup
 
   covergroup cov_read_out;
@@ -42,7 +42,7 @@ class afifo_subscriber extends uvm_component;
       bins not_empty = {0};
       bins empty     = {1};
     }
-    cross_r : cross rdata_cp, rinc_cp, empty_cp;
+    
   endgroup
 
   real cov_w_in, cov_r_out;

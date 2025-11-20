@@ -58,7 +58,7 @@ module top();
 
   initial
   begin
-    run_test("write_read_par_test");
+    run_test("write_after_read_test");
     #100 $finish;
   end
  endmodule

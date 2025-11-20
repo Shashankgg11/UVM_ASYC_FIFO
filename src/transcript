@@ -1,0 +1,1161 @@
+# vsim -c top 
+# Start time: 11:38:43 on Nov 20,2025
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# //  Questa Sim
+# //  Version 10.6c linux Jul 25 2017
+# //
+# //  Copyright 1991-2017 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading sv_std.std
+# Loading work.afifo_if(fast)
+# Loading mtiUvm.uvm_pkg
+# Loading work.afifo_pkg(fast)
+# Loading work.top_sv_unit(fast)
+# Loading work.top(fast)
+# Loading mtiUvm.questa_uvm_pkg(fast)
+# Loading /tools/mentor/questasim_10.6c/questasim/uvm-1.1d/linux/uvm_dpi.so
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(215) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(217) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# UVM_INFO @ 0: reporter [RNTST] Running test write_after_read_test...
+# ------------------------------------------------------------------
+# Name                       Type                        Size  Value
+# ------------------------------------------------------------------
+# uvm_test_top               write_after_read_test       -     @471 
+#   env                      afifo_env                   -     @478 
+#     r_active_agent         afifo_r_agent               -     @492 
+#       driver               afifo_rdriver               -     @748 
+#         rsp_port           uvm_analysis_port           -     @763 
+#         seq_item_port      uvm_seq_item_pull_port      -     @755 
+#       out_mon              afifo_r_passive_monitor     -     @771 
+#         r_passive_port     uvm_analysis_port           -     @782 
+#       sequencer            afifo_read_sequencer        -     @639 
+#         rsp_export         uvm_analysis_export         -     @646 
+#         seq_item_export    uvm_seq_item_pull_imp       -     @740 
+#         arbitration_queue  array                       0     -    
+#         lock_queue         array                       0     -    
+#         num_last_reqs      integral                    32    'd1  
+#         num_last_rsps      integral                    32    'd1  
+#     scoreboard             afifo_scoreboard            -     @499 
+#       r_out_imp            uvm_analysis_imp_r_out_sb   -     @805 
+#       w_in_imp             uvm_analysis_imp_w_in_sb    -     @797 
+#     subscriber             afifo_subscriber            -     @506 
+#       aport_r_out          uvm_analysis_imp_r_out_sub  -     @521 
+#       aport_w_in           uvm_analysis_imp_w_in_sub   -     @513 
+#     vseqr                  afifo_virtual_sequencer     -     @529 
+#       rsp_export           uvm_analysis_export         -     @536 
+#       seq_item_export      uvm_seq_item_pull_imp       -     @630 
+#       arbitration_queue    array                       0     -    
+#       lock_queue           array                       0     -    
+#       num_last_reqs        integral                    32    'd1  
+#       num_last_rsps        integral                    32    'd1  
+#     w_active_agent         afifo_w_agent               -     @485 
+#       driver               afifo_wdriver               -     @928 
+#         rsp_port           uvm_analysis_port           -     @943 
+#         seq_item_port      uvm_seq_item_pull_port      -     @935 
+#       in_mon               afifo_w_active_monitor      -     @951 
+#         w_active_port      uvm_analysis_port           -     @962 
+#       sequencer            afifo_write_sequencer       -     @819 
+#         rsp_export         uvm_analysis_export         -     @826 
+#         seq_item_export    uvm_seq_item_pull_imp       -     @920 
+#         arbitration_queue  array                       0     -    
+#         lock_queue         array                       0     -    
+#         num_last_reqs      integral                    32    'd1  
+#         num_last_rsps      integral                    32    'd1  
+# ------------------------------------------------------------------
+# UVM_INFO afifo_wdriver.sv(30) @ 10: uvm_test_top.env.w_active_agent.driver [afifo_wdriver] Write_Driver DRIVER sent to DUT:, wdata = x, winc = 0
+# WRITE RESET asserted correctly
+# UVM_INFO afifo_wdriver.sv(30) @ 30: uvm_test_top.env.w_active_agent.driver [afifo_wdriver] Write_Driver DRIVER sent to DUT:, wdata = 201, winc = 1
+# UVM_INFO afifo_scoreboard.sv(32) @ 30: uvm_test_top.env.scoreboard [afifo_scoreboard] WRITE_IN: wdata=c9 (queue size=1)
+# UVM_INFO afifo_scoreboard.sv(46) @ 30: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+# 
+# 
+# UVM_INFO afifo_w_active_monitor.sv(26) @ 30: uvm_test_top.env.w_active_agent.in_mon [afifo_w_active_monitor] Write monitor wdata = 201, winc = 1 wfull = 0
+# Write data or wfull stable when winc=0
+# UVM_INFO afifo_wdriver.sv(30) @ 50: uvm_test_top.env.w_active_agent.driver [afifo_wdriver] Write_Driver DRIVER sent to DUT:, wdata = 98, winc = 1
+# UVM_INFO afifo_scoreboard.sv(32) @ 50: uvm_test_top.env.scoreboard [afifo_scoreboard] WRITE_IN: wdata=62 (queue size=2)
+# UVM_INFO afifo_scoreboard.sv(46) @ 50: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+# 
+# 
+# UVM_INFO afifo_w_active_monitor.sv(26) @ 50: uvm_test_top.env.w_active_agent.in_mon [afifo_w_active_monitor] Write monitor wdata = 98, winc = 1 wfull = 0
+# Read data or rempty not stable when rinc=0
+# UVM_INFO afifo_wdriver.sv(30) @ 70: uvm_test_top.env.w_active_agent.driver [afifo_wdriver] Write_Driver DRIVER sent to DUT:, wdata = 201, winc = 1
+# UVM_INFO afifo_scoreboard.sv(32) @ 70: uvm_test_top.env.scoreboard [afifo_scoreboard] WRITE_IN: wdata=c9 (queue size=3)
+# UVM_INFO afifo_scoreboard.sv(46) @ 70: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+# 
+# 
+# UVM_INFO afifo_w_active_monitor.sv(26) @ 70: uvm_test_top.env.w_active_agent.in_mon [afifo_w_active_monitor] Write monitor wdata = 201, winc = 1 wfull = 0
+# UVM_INFO afifo_wdriver.sv(30) @ 90: uvm_test_top.env.w_active_agent.driver [afifo_wdriver] Write_Driver DRIVER sent to DUT:, wdata = 212, winc = 1
+# UVM_INFO afifo_scoreboard.sv(32) @ 90: uvm_test_top.env.scoreboard [afifo_scoreboard] WRITE_IN: wdata=d4 (queue size=4)
+# UVM_INFO afifo_scoreboard.sv(46) @ 90: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+# 
+# 
+# UVM_INFO afifo_w_active_monitor.sv(26) @ 90: uvm_test_top.env.w_active_agent.in_mon [afifo_w_active_monitor] Write monitor wdata = 212, winc = 1 wfull = 0
+# Read data or rempty stable when rinc=0
+# UVM_INFO afifo_wdriver.sv(30) @ 110: uvm_test_top.env.w_active_agent.driver [afifo_wdriver] Write_Driver DRIVER sent to DUT:, wdata = 147, winc = 1
+# UVM_INFO afifo_scoreboard.sv(32) @ 110: uvm_test_top.env.scoreboard [afifo_scoreboard] WRITE_IN: wdata=93 (queue size=5)
+# UVM_INFO afifo_scoreboard.sv(46) @ 110: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+# 
+# 
+# UVM_INFO afifo_w_active_monitor.sv(26) @ 110: uvm_test_top.env.w_active_agent.in_mon [afifo_w_active_monitor] Write monitor wdata = 147, winc = 1 wfull = 0
+# UVM_INFO afifo_wdriver.sv(30) @ 130: uvm_test_top.env.w_active_agent.driver [afifo_wdriver] Write_Driver DRIVER sent to DUT:, wdata = 102, winc = 1
+# UVM_INFO afifo_scoreboard.sv(32) @ 130: uvm_test_top.env.scoreboard [afifo_scoreboard] WRITE_IN: wdata=66 (queue size=6)
+# UVM_INFO afifo_scoreboard.sv(46) @ 130: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+# 
+# 
+# UVM_INFO afifo_w_active_monitor.sv(26) @ 130: uvm_test_top.env.w_active_agent.in_mon [afifo_w_active_monitor] Write monitor wdata = 102, winc = 1 wfull = 0
+# UVM_INFO afifo_scoreboard.sv(78) @ 140: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+#  MATCH = 0   MISMATCH = 0
+# UVM_INFO afifo_scoreboard.sv(79) @ 140: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+#  
+# ***********************************************************
+#  
+# 
+# UVM_INFO afifo_r_passive_monitor.sv(26) @ 140: uvm_test_top.env.r_active_agent.out_mon [afifo_r_passive_monitor] Read monitor rempty = 0, rdata = 201 rinc = 0
+# Read data or rempty stable when rinc=0
+# UVM_INFO afifo_wdriver.sv(30) @ 150: uvm_test_top.env.w_active_agent.driver [afifo_wdriver] Write_Driver DRIVER sent to DUT:, wdata = 76, winc = 1
+# UVM_INFO afifo_scoreboard.sv(32) @ 150: uvm_test_top.env.scoreboard [afifo_scoreboard] WRITE_IN: wdata=4c (queue size=7)
+# UVM_INFO afifo_scoreboard.sv(46) @ 150: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+# 
+# 
+# UVM_INFO afifo_w_active_monitor.sv(26) @ 150: uvm_test_top.env.w_active_agent.in_mon [afifo_w_active_monitor] Write monitor wdata = 76, winc = 1 wfull = 0
+# UVM_INFO afifo_wdriver.sv(30) @ 170: uvm_test_top.env.w_active_agent.driver [afifo_wdriver] Write_Driver DRIVER sent to DUT:, wdata = 38, winc = 1
+# UVM_INFO afifo_scoreboard.sv(32) @ 170: uvm_test_top.env.scoreboard [afifo_scoreboard] WRITE_IN: wdata=26 (queue size=8)
+# UVM_INFO afifo_scoreboard.sv(46) @ 170: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+# 
+# 
+# UVM_INFO afifo_w_active_monitor.sv(26) @ 170: uvm_test_top.env.w_active_agent.in_mon [afifo_w_active_monitor] Write monitor wdata = 38, winc = 1 wfull = 0
+# UVM_INFO afifo_scoreboard.sv(78) @ 180: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+#  MATCH = 0   MISMATCH = 0
+# UVM_INFO afifo_scoreboard.sv(79) @ 180: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+#  
+# ***********************************************************
+#  
+# 
+# UVM_INFO afifo_r_passive_monitor.sv(26) @ 180: uvm_test_top.env.r_active_agent.out_mon [afifo_r_passive_monitor] Read monitor rempty = 0, rdata = 201 rinc = 0
+# Read data or rempty not stable when rinc=0
+# UVM_INFO afifo_wdriver.sv(30) @ 190: uvm_test_top.env.w_active_agent.driver [afifo_wdriver] Write_Driver DRIVER sent to DUT:, wdata = 13, winc = 1
+# UVM_INFO afifo_scoreboard.sv(32) @ 190: uvm_test_top.env.scoreboard [afifo_scoreboard] WRITE_IN: wdata=d (queue size=9)
+# UVM_INFO afifo_scoreboard.sv(46) @ 190: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+# 
+# 
+# UVM_INFO afifo_w_active_monitor.sv(26) @ 190: uvm_test_top.env.w_active_agent.in_mon [afifo_w_active_monitor] Write monitor wdata = 13, winc = 1 wfull = 0
+# UVM_INFO afifo_wdriver.sv(30) @ 210: uvm_test_top.env.w_active_agent.driver [afifo_wdriver] Write_Driver DRIVER sent to DUT:, wdata = 225, winc = 1
+# UVM_INFO afifo_scoreboard.sv(32) @ 210: uvm_test_top.env.scoreboard [afifo_scoreboard] WRITE_IN: wdata=e1 (queue size=10)
+# UVM_INFO afifo_scoreboard.sv(46) @ 210: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+# 
+# 
+# UVM_INFO afifo_w_active_monitor.sv(26) @ 210: uvm_test_top.env.w_active_agent.in_mon [afifo_w_active_monitor] Write monitor wdata = 225, winc = 1 wfull = 0
+# UVM_INFO afifo_scoreboard.sv(78) @ 220: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+#  MATCH = 0   MISMATCH = 0
+# UVM_INFO afifo_scoreboard.sv(79) @ 220: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+#  
+# ***********************************************************
+#  
+# 
+# UVM_INFO afifo_r_passive_monitor.sv(26) @ 220: uvm_test_top.env.r_active_agent.out_mon [afifo_r_passive_monitor] Read monitor rempty = 0, rdata = 201 rinc = 0
+# Read data or rempty stable when rinc=0
+# UVM_INFO afifo_wdriver.sv(30) @ 230: uvm_test_top.env.w_active_agent.driver [afifo_wdriver] Write_Driver DRIVER sent to DUT:, wdata = 147, winc = 1
+# UVM_INFO afifo_scoreboard.sv(32) @ 230: uvm_test_top.env.scoreboard [afifo_scoreboard] WRITE_IN: wdata=93 (queue size=11)
+# UVM_INFO afifo_scoreboard.sv(46) @ 230: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+# 
+# 
+# UVM_INFO afifo_w_active_monitor.sv(26) @ 230: uvm_test_top.env.w_active_agent.in_mon [afifo_w_active_monitor] Write monitor wdata = 147, winc = 1 wfull = 0
+# UVM_INFO afifo_wdriver.sv(30) @ 250: uvm_test_top.env.w_active_agent.driver [afifo_wdriver] Write_Driver DRIVER sent to DUT:, wdata = 25, winc = 1
+# UVM_INFO afifo_scoreboard.sv(32) @ 250: uvm_test_top.env.scoreboard [afifo_scoreboard] WRITE_IN: wdata=19 (queue size=12)
+# UVM_INFO afifo_scoreboard.sv(46) @ 250: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+# 
+# 
+# UVM_INFO afifo_w_active_monitor.sv(26) @ 250: uvm_test_top.env.w_active_agent.in_mon [afifo_w_active_monitor] Write monitor wdata = 25, winc = 1 wfull = 0
+# UVM_INFO afifo_scoreboard.sv(78) @ 260: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+#  MATCH = 0   MISMATCH = 0
+# UVM_INFO afifo_scoreboard.sv(79) @ 260: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+#  
+# ***********************************************************
+#  
+# 
+# UVM_INFO afifo_r_passive_monitor.sv(26) @ 260: uvm_test_top.env.r_active_agent.out_mon [afifo_r_passive_monitor] Read monitor rempty = 0, rdata = 201 rinc = 0
+# Read data or rempty stable when rinc=0
+# UVM_INFO afifo_wdriver.sv(30) @ 270: uvm_test_top.env.w_active_agent.driver [afifo_wdriver] Write_Driver DRIVER sent to DUT:, wdata = 136, winc = 1
+# UVM_INFO afifo_scoreboard.sv(32) @ 270: uvm_test_top.env.scoreboard [afifo_scoreboard] WRITE_IN: wdata=88 (queue size=13)
+# UVM_INFO afifo_scoreboard.sv(46) @ 270: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+# 
+# 
+# UVM_INFO afifo_w_active_monitor.sv(26) @ 270: uvm_test_top.env.w_active_agent.in_mon [afifo_w_active_monitor] Write monitor wdata = 136, winc = 1 wfull = 0
+# UVM_INFO afifo_wdriver.sv(30) @ 290: uvm_test_top.env.w_active_agent.driver [afifo_wdriver] Write_Driver DRIVER sent to DUT:, wdata = 18, winc = 1
+# UVM_INFO afifo_scoreboard.sv(32) @ 290: uvm_test_top.env.scoreboard [afifo_scoreboard] WRITE_IN: wdata=12 (queue size=14)
+# UVM_INFO afifo_scoreboard.sv(46) @ 290: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+# 
+# 
+# UVM_INFO afifo_w_active_monitor.sv(26) @ 290: uvm_test_top.env.w_active_agent.in_mon [afifo_w_active_monitor] Write monitor wdata = 18, winc = 1 wfull = 0
+# UVM_INFO afifo_scoreboard.sv(78) @ 300: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+#  MATCH = 0   MISMATCH = 0
+# UVM_INFO afifo_scoreboard.sv(79) @ 300: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+#  
+# ***********************************************************
+#  
+# 
+# UVM_INFO afifo_r_passive_monitor.sv(26) @ 300: uvm_test_top.env.r_active_agent.out_mon [afifo_r_passive_monitor] Read monitor rempty = 0, rdata = 201 rinc = 0
+# Read data or rempty stable when rinc=0
+# UVM_INFO afifo_wdriver.sv(30) @ 310: uvm_test_top.env.w_active_agent.driver [afifo_wdriver] Write_Driver DRIVER sent to DUT:, wdata = 252, winc = 1
+# UVM_INFO afifo_scoreboard.sv(32) @ 310: uvm_test_top.env.scoreboard [afifo_scoreboard] WRITE_IN: wdata=fc (queue size=15)
+# UVM_INFO afifo_scoreboard.sv(46) @ 310: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+# 
+# 
+# UVM_INFO afifo_w_active_monitor.sv(26) @ 310: uvm_test_top.env.w_active_agent.in_mon [afifo_w_active_monitor] Write monitor wdata = 252, winc = 1 wfull = 0
+# UVM_INFO afifo_wdriver.sv(30) @ 330: uvm_test_top.env.w_active_agent.driver [afifo_wdriver] Write_Driver DRIVER sent to DUT:, wdata = 123, winc = 1
+# UVM_INFO afifo_scoreboard.sv(32) @ 330: uvm_test_top.env.scoreboard [afifo_scoreboard] WRITE_IN: wdata=7b (queue size=16)
+# UVM_INFO afifo_scoreboard.sv(46) @ 330: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+# 
+# 
+# UVM_INFO afifo_w_active_monitor.sv(26) @ 330: uvm_test_top.env.w_active_agent.in_mon [afifo_w_active_monitor] Write monitor wdata = 123, winc = 1 wfull = 1
+# UVM_INFO afifo_scoreboard.sv(78) @ 340: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+#  MATCH = 0   MISMATCH = 0
+# UVM_INFO afifo_scoreboard.sv(79) @ 340: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+#  
+# ***********************************************************
+#  
+# 
+# UVM_INFO afifo_r_passive_monitor.sv(26) @ 340: uvm_test_top.env.r_active_agent.out_mon [afifo_r_passive_monitor] Read monitor rempty = 0, rdata = 201 rinc = 0
+# Read data or rempty stable when rinc=0
+# UVM_INFO afifo_wdriver.sv(30) @ 350: uvm_test_top.env.w_active_agent.driver [afifo_wdriver] Write_Driver DRIVER sent to DUT:, wdata = 239, winc = 1
+# UVM_INFO afifo_scoreboard.sv(36) @ 350: uvm_test_top.env.scoreboard [uvm_test_top.env.scoreboard] FIFO FULL signal is correct
+# UVM_INFO afifo_scoreboard.sv(46) @ 350: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+# 
+# 
+# UVM_INFO afifo_w_active_monitor.sv(26) @ 350: uvm_test_top.env.w_active_agent.in_mon [afifo_w_active_monitor] Write monitor wdata = 239, winc = 1 wfull = 1
+# UVM_INFO afifo_wdriver.sv(30) @ 370: uvm_test_top.env.w_active_agent.driver [afifo_wdriver] Write_Driver DRIVER sent to DUT:, wdata = 216, winc = 1
+# UVM_INFO afifo_scoreboard.sv(36) @ 370: uvm_test_top.env.scoreboard [uvm_test_top.env.scoreboard] FIFO FULL signal is correct
+# UVM_INFO afifo_scoreboard.sv(46) @ 370: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+# 
+# 
+# UVM_INFO afifo_w_active_monitor.sv(26) @ 370: uvm_test_top.env.w_active_agent.in_mon [afifo_w_active_monitor] Write monitor wdata = 216, winc = 1 wfull = 1
+# UVM_INFO afifo_scoreboard.sv(78) @ 380: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+#  MATCH = 2   MISMATCH = 0
+# UVM_INFO afifo_scoreboard.sv(79) @ 380: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+#  
+# ***********************************************************
+#  
+# 
+# UVM_INFO afifo_r_passive_monitor.sv(26) @ 380: uvm_test_top.env.r_active_agent.out_mon [afifo_r_passive_monitor] Read monitor rempty = 0, rdata = 201 rinc = 0
+# Read data or rempty stable when rinc=0
+# UVM_INFO afifo_wdriver.sv(30) @ 390: uvm_test_top.env.w_active_agent.driver [afifo_wdriver] Write_Driver DRIVER sent to DUT:, wdata = 243, winc = 1
+# UVM_INFO afifo_scoreboard.sv(36) @ 390: uvm_test_top.env.scoreboard [uvm_test_top.env.scoreboard] FIFO FULL signal is correct
+# UVM_INFO afifo_scoreboard.sv(46) @ 390: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+# 
+# 
+# UVM_INFO afifo_w_active_monitor.sv(26) @ 390: uvm_test_top.env.w_active_agent.in_mon [afifo_w_active_monitor] Write monitor wdata = 243, winc = 1 wfull = 1
+# UVM_INFO afifo_wdriver.sv(30) @ 410: uvm_test_top.env.w_active_agent.driver [afifo_wdriver] Write_Driver DRIVER sent to DUT:, wdata = 234, winc = 1
+# UVM_INFO afifo_scoreboard.sv(36) @ 410: uvm_test_top.env.scoreboard [uvm_test_top.env.scoreboard] FIFO FULL signal is correct
+# UVM_INFO afifo_scoreboard.sv(46) @ 410: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+# 
+# 
+# UVM_INFO afifo_w_active_monitor.sv(26) @ 410: uvm_test_top.env.w_active_agent.in_mon [afifo_w_active_monitor] Write monitor wdata = 234, winc = 1 wfull = 1
+# UVM_INFO afifo_scoreboard.sv(78) @ 420: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+#  MATCH = 4   MISMATCH = 0
+# UVM_INFO afifo_scoreboard.sv(79) @ 420: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+#  
+# ***********************************************************
+#  
+# 
+# UVM_INFO afifo_r_passive_monitor.sv(26) @ 420: uvm_test_top.env.r_active_agent.out_mon [afifo_r_passive_monitor] Read monitor rempty = 0, rdata = 201 rinc = 0
+# Read data or rempty stable when rinc=0
+# UVM_INFO afifo_wdriver.sv(30) @ 430: uvm_test_top.env.w_active_agent.driver [afifo_wdriver] Write_Driver DRIVER sent to DUT:, wdata = 152, winc = 1
+# UVM_INFO afifo_scoreboard.sv(36) @ 430: uvm_test_top.env.scoreboard [uvm_test_top.env.scoreboard] FIFO FULL signal is correct
+# UVM_INFO afifo_scoreboard.sv(46) @ 430: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+# 
+# 
+# UVM_INFO afifo_w_active_monitor.sv(26) @ 430: uvm_test_top.env.w_active_agent.in_mon [afifo_w_active_monitor] Write monitor wdata = 152, winc = 1 wfull = 1
+# UVM_INFO afifo_wdriver.sv(30) @ 450: uvm_test_top.env.w_active_agent.driver [afifo_wdriver] Write_Driver DRIVER sent to DUT:, wdata = 207, winc = 1
+# UVM_INFO afifo_scoreboard.sv(36) @ 450: uvm_test_top.env.scoreboard [uvm_test_top.env.scoreboard] FIFO FULL signal is correct
+# UVM_INFO afifo_scoreboard.sv(46) @ 450: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+# 
+# 
+# UVM_INFO afifo_w_active_monitor.sv(26) @ 450: uvm_test_top.env.w_active_agent.in_mon [afifo_w_active_monitor] Write monitor wdata = 207, winc = 1 wfull = 1
+# UVM_INFO afifo_scoreboard.sv(78) @ 460: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+#  MATCH = 6   MISMATCH = 0
+# UVM_INFO afifo_scoreboard.sv(79) @ 460: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+#  
+# ***********************************************************
+#  
+# 
+# UVM_INFO afifo_r_passive_monitor.sv(26) @ 460: uvm_test_top.env.r_active_agent.out_mon [afifo_r_passive_monitor] Read monitor rempty = 0, rdata = 201 rinc = 0
+# Read data or rempty stable when rinc=0
+# UVM_INFO afifo_wdriver.sv(30) @ 470: uvm_test_top.env.w_active_agent.driver [afifo_wdriver] Write_Driver DRIVER sent to DUT:, wdata = 22, winc = 1
+# UVM_INFO afifo_scoreboard.sv(36) @ 470: uvm_test_top.env.scoreboard [uvm_test_top.env.scoreboard] FIFO FULL signal is correct
+# UVM_INFO afifo_scoreboard.sv(46) @ 470: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+# 
+# 
+# UVM_INFO afifo_w_active_monitor.sv(26) @ 470: uvm_test_top.env.w_active_agent.in_mon [afifo_w_active_monitor] Write monitor wdata = 22, winc = 1 wfull = 1
+# UVM_INFO afifo_wdriver.sv(30) @ 490: uvm_test_top.env.w_active_agent.driver [afifo_wdriver] Write_Driver DRIVER sent to DUT:, wdata = 105, winc = 1
+# UVM_INFO afifo_scoreboard.sv(36) @ 490: uvm_test_top.env.scoreboard [uvm_test_top.env.scoreboard] FIFO FULL signal is correct
+# UVM_INFO afifo_scoreboard.sv(46) @ 490: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+# 
+# 
+# UVM_INFO afifo_w_active_monitor.sv(26) @ 490: uvm_test_top.env.w_active_agent.in_mon [afifo_w_active_monitor] Write monitor wdata = 105, winc = 1 wfull = 1
+# UVM_INFO afifo_scoreboard.sv(78) @ 500: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+#  MATCH = 8   MISMATCH = 0
+# UVM_INFO afifo_scoreboard.sv(79) @ 500: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+#  
+# ***********************************************************
+#  
+# 
+# UVM_INFO afifo_r_passive_monitor.sv(26) @ 500: uvm_test_top.env.r_active_agent.out_mon [afifo_r_passive_monitor] Read monitor rempty = 0, rdata = 201 rinc = 0
+# Read data or rempty stable when rinc=0
+# UVM_INFO afifo_wdriver.sv(30) @ 510: uvm_test_top.env.w_active_agent.driver [afifo_wdriver] Write_Driver DRIVER sent to DUT:, wdata = 96, winc = 1
+# UVM_INFO afifo_scoreboard.sv(36) @ 510: uvm_test_top.env.scoreboard [uvm_test_top.env.scoreboard] FIFO FULL signal is correct
+# UVM_INFO afifo_scoreboard.sv(46) @ 510: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+# 
+# 
+# UVM_INFO afifo_w_active_monitor.sv(26) @ 510: uvm_test_top.env.w_active_agent.in_mon [afifo_w_active_monitor] Write monitor wdata = 96, winc = 1 wfull = 1
+# UVM_INFO afifo_wdriver.sv(30) @ 530: uvm_test_top.env.w_active_agent.driver [afifo_wdriver] Write_Driver DRIVER sent to DUT:, wdata = 215, winc = 1
+# UVM_INFO afifo_scoreboard.sv(36) @ 530: uvm_test_top.env.scoreboard [uvm_test_top.env.scoreboard] FIFO FULL signal is correct
+# UVM_INFO afifo_scoreboard.sv(46) @ 530: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+# 
+# 
+# UVM_INFO afifo_w_active_monitor.sv(26) @ 530: uvm_test_top.env.w_active_agent.in_mon [afifo_w_active_monitor] Write monitor wdata = 215, winc = 1 wfull = 1
+# UVM_INFO afifo_scoreboard.sv(78) @ 540: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+#  MATCH = 10   MISMATCH = 0
+# UVM_INFO afifo_scoreboard.sv(79) @ 540: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+#  
+# ***********************************************************
+#  
+# 
+# UVM_INFO afifo_r_passive_monitor.sv(26) @ 540: uvm_test_top.env.r_active_agent.out_mon [afifo_r_passive_monitor] Read monitor rempty = 0, rdata = 201 rinc = 0
+# Read data or rempty stable when rinc=0
+# UVM_INFO afifo_wdriver.sv(30) @ 550: uvm_test_top.env.w_active_agent.driver [afifo_wdriver] Write_Driver DRIVER sent to DUT:, wdata = 116, winc = 1
+# UVM_INFO afifo_scoreboard.sv(36) @ 550: uvm_test_top.env.scoreboard [uvm_test_top.env.scoreboard] FIFO FULL signal is correct
+# UVM_INFO afifo_scoreboard.sv(46) @ 550: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+# 
+# 
+# UVM_INFO afifo_w_active_monitor.sv(26) @ 550: uvm_test_top.env.w_active_agent.in_mon [afifo_w_active_monitor] Write monitor wdata = 116, winc = 1 wfull = 1
+# UVM_INFO afifo_wdriver.sv(30) @ 570: uvm_test_top.env.w_active_agent.driver [afifo_wdriver] Write_Driver DRIVER sent to DUT:, wdata = 188, winc = 1
+# UVM_INFO afifo_scoreboard.sv(36) @ 570: uvm_test_top.env.scoreboard [uvm_test_top.env.scoreboard] FIFO FULL signal is correct
+# UVM_INFO afifo_scoreboard.sv(46) @ 570: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+# 
+# 
+# UVM_INFO afifo_w_active_monitor.sv(26) @ 570: uvm_test_top.env.w_active_agent.in_mon [afifo_w_active_monitor] Write monitor wdata = 188, winc = 1 wfull = 1
+# UVM_INFO afifo_scoreboard.sv(78) @ 580: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+#  MATCH = 12   MISMATCH = 0
+# UVM_INFO afifo_scoreboard.sv(79) @ 580: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+#  
+# ***********************************************************
+#  
+# 
+# UVM_INFO afifo_r_passive_monitor.sv(26) @ 580: uvm_test_top.env.r_active_agent.out_mon [afifo_r_passive_monitor] Read monitor rempty = 0, rdata = 201 rinc = 0
+# Read data or rempty stable when rinc=0
+# UVM_INFO afifo_wdriver.sv(30) @ 590: uvm_test_top.env.w_active_agent.driver [afifo_wdriver] Write_Driver DRIVER sent to DUT:, wdata = 29, winc = 1
+# UVM_INFO afifo_scoreboard.sv(36) @ 590: uvm_test_top.env.scoreboard [uvm_test_top.env.scoreboard] FIFO FULL signal is correct
+# UVM_INFO afifo_scoreboard.sv(46) @ 590: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+# 
+# 
+# UVM_INFO afifo_w_active_monitor.sv(26) @ 590: uvm_test_top.env.w_active_agent.in_mon [afifo_w_active_monitor] Write monitor wdata = 29, winc = 1 wfull = 1
+# UVM_INFO afifo_scoreboard.sv(36) @ 610: uvm_test_top.env.scoreboard [uvm_test_top.env.scoreboard] FIFO FULL signal is correct
+# UVM_INFO afifo_scoreboard.sv(46) @ 610: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+# 
+# 
+# UVM_INFO afifo_w_active_monitor.sv(26) @ 610: uvm_test_top.env.w_active_agent.in_mon [afifo_w_active_monitor] Write monitor wdata = 196, winc = 1 wfull = 1
+# UVM_INFO afifo_rdriver.sv(29) @ 620: uvm_test_top.env.r_active_agent.driver [afifo_rdriver] Read DRIVER sent to DUT: rinc = 0 
+# UVM_INFO afifo_scoreboard.sv(78) @ 620: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+#  MATCH = 14   MISMATCH = 0
+# UVM_INFO afifo_scoreboard.sv(79) @ 620: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+#  
+# ***********************************************************
+#  
+# 
+# UVM_INFO afifo_r_passive_monitor.sv(26) @ 620: uvm_test_top.env.r_active_agent.out_mon [afifo_r_passive_monitor] Read monitor rempty = 0, rdata = 201 rinc = 0
+# Read data or rempty stable when rinc=0
+# UVM_INFO afifo_scoreboard.sv(36) @ 630: uvm_test_top.env.scoreboard [uvm_test_top.env.scoreboard] FIFO FULL signal is correct
+# UVM_INFO afifo_scoreboard.sv(46) @ 630: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+# 
+# 
+# UVM_INFO afifo_w_active_monitor.sv(26) @ 630: uvm_test_top.env.w_active_agent.in_mon [afifo_w_active_monitor] Write monitor wdata = 196, winc = 1 wfull = 1
+# UVM_INFO afifo_scoreboard.sv(36) @ 650: uvm_test_top.env.scoreboard [uvm_test_top.env.scoreboard] FIFO FULL signal is correct
+# UVM_INFO afifo_scoreboard.sv(46) @ 650: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+# 
+# 
+# UVM_INFO afifo_w_active_monitor.sv(26) @ 650: uvm_test_top.env.w_active_agent.in_mon [afifo_w_active_monitor] Write monitor wdata = 196, winc = 1 wfull = 1
+# UVM_INFO afifo_rdriver.sv(29) @ 660: uvm_test_top.env.r_active_agent.driver [afifo_rdriver] Read DRIVER sent to DUT: rinc = 1 
+# UVM_INFO afifo_scoreboard.sv(54) @ 660: uvm_test_top.env.scoreboard [afifo_scoreboard] READ (queue size=15)
+# UVM_ERROR afifo_scoreboard.sv(62) @ 660: uvm_test_top.env.scoreboard [afifo_scoreboard] Mismatch! Expected=201 Got=98
+# UVM_INFO afifo_scoreboard.sv(78) @ 660: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+#  MATCH = 16   MISMATCH = 1
+# UVM_INFO afifo_scoreboard.sv(79) @ 660: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+#  
+# ***********************************************************
+#  
+# 
+# UVM_INFO afifo_r_passive_monitor.sv(26) @ 660: uvm_test_top.env.r_active_agent.out_mon [afifo_r_passive_monitor] Read monitor rempty = 0, rdata = 98 rinc = 1
+# Read data or rempty stable when rinc=0
+# UVM_INFO afifo_scoreboard.sv(32) @ 670: uvm_test_top.env.scoreboard [afifo_scoreboard] WRITE_IN: wdata=c4 (queue size=16)
+# UVM_INFO afifo_scoreboard.sv(46) @ 670: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+# 
+# 
+# UVM_INFO afifo_w_active_monitor.sv(26) @ 670: uvm_test_top.env.w_active_agent.in_mon [afifo_w_active_monitor] Write monitor wdata = 196, winc = 1 wfull = 1
+# UVM_INFO afifo_scoreboard.sv(36) @ 690: uvm_test_top.env.scoreboard [uvm_test_top.env.scoreboard] FIFO FULL signal is correct
+# UVM_INFO afifo_scoreboard.sv(46) @ 690: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+# 
+# 
+# UVM_INFO afifo_w_active_monitor.sv(26) @ 690: uvm_test_top.env.w_active_agent.in_mon [afifo_w_active_monitor] Write monitor wdata = 196, winc = 1 wfull = 1
+# UVM_INFO afifo_rdriver.sv(29) @ 700: uvm_test_top.env.r_active_agent.driver [afifo_rdriver] Read DRIVER sent to DUT: rinc = 1 
+# UVM_INFO afifo_scoreboard.sv(54) @ 700: uvm_test_top.env.scoreboard [afifo_scoreboard] READ (queue size=15)
+# UVM_ERROR afifo_scoreboard.sv(62) @ 700: uvm_test_top.env.scoreboard [afifo_scoreboard] Mismatch! Expected=98 Got=201
+# UVM_INFO afifo_scoreboard.sv(78) @ 700: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+#  MATCH = 17   MISMATCH = 2
+# UVM_INFO afifo_scoreboard.sv(79) @ 700: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+#  
+# ***********************************************************
+#  
+# 
+# UVM_INFO afifo_r_passive_monitor.sv(26) @ 700: uvm_test_top.env.r_active_agent.out_mon [afifo_r_passive_monitor] Read monitor rempty = 0, rdata = 201 rinc = 1
+# UVM_INFO afifo_scoreboard.sv(32) @ 710: uvm_test_top.env.scoreboard [afifo_scoreboard] WRITE_IN: wdata=c4 (queue size=16)
+# UVM_INFO afifo_scoreboard.sv(46) @ 710: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+# 
+# 
+# UVM_INFO afifo_w_active_monitor.sv(26) @ 710: uvm_test_top.env.w_active_agent.in_mon [afifo_w_active_monitor] Write monitor wdata = 196, winc = 1 wfull = 0
+# UVM_INFO afifo_scoreboard.sv(36) @ 730: uvm_test_top.env.scoreboard [uvm_test_top.env.scoreboard] FIFO FULL signal is correct
+# UVM_INFO afifo_scoreboard.sv(46) @ 730: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+# 
+# 
+# UVM_INFO afifo_w_active_monitor.sv(26) @ 730: uvm_test_top.env.w_active_agent.in_mon [afifo_w_active_monitor] Write monitor wdata = 196, winc = 1 wfull = 1
+# UVM_INFO afifo_rdriver.sv(29) @ 740: uvm_test_top.env.r_active_agent.driver [afifo_rdriver] Read DRIVER sent to DUT: rinc = 1 
+# UVM_INFO afifo_scoreboard.sv(54) @ 740: uvm_test_top.env.scoreboard [afifo_scoreboard] READ (queue size=15)
+# UVM_ERROR afifo_scoreboard.sv(62) @ 740: uvm_test_top.env.scoreboard [afifo_scoreboard] Mismatch! Expected=201 Got=212
+# UVM_INFO afifo_scoreboard.sv(78) @ 740: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+#  MATCH = 18   MISMATCH = 3
+# UVM_INFO afifo_scoreboard.sv(79) @ 740: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+#  
+# ***********************************************************
+#  
+# 
+# UVM_INFO afifo_r_passive_monitor.sv(26) @ 740: uvm_test_top.env.r_active_agent.out_mon [afifo_r_passive_monitor] Read monitor rempty = 0, rdata = 212 rinc = 1
+# UVM_INFO afifo_scoreboard.sv(32) @ 750: uvm_test_top.env.scoreboard [afifo_scoreboard] WRITE_IN: wdata=c4 (queue size=16)
+# UVM_INFO afifo_scoreboard.sv(46) @ 750: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+# 
+# 
+# UVM_INFO afifo_w_active_monitor.sv(26) @ 750: uvm_test_top.env.w_active_agent.in_mon [afifo_w_active_monitor] Write monitor wdata = 196, winc = 1 wfull = 0
+# UVM_INFO afifo_scoreboard.sv(36) @ 770: uvm_test_top.env.scoreboard [uvm_test_top.env.scoreboard] FIFO FULL signal is correct
+# UVM_INFO afifo_scoreboard.sv(46) @ 770: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+# 
+# 
+# UVM_INFO afifo_w_active_monitor.sv(26) @ 770: uvm_test_top.env.w_active_agent.in_mon [afifo_w_active_monitor] Write monitor wdata = 196, winc = 1 wfull = 1
+# UVM_INFO afifo_rdriver.sv(29) @ 780: uvm_test_top.env.r_active_agent.driver [afifo_rdriver] Read DRIVER sent to DUT: rinc = 1 
+# UVM_INFO afifo_scoreboard.sv(54) @ 780: uvm_test_top.env.scoreboard [afifo_scoreboard] READ (queue size=15)
+# UVM_ERROR afifo_scoreboard.sv(62) @ 780: uvm_test_top.env.scoreboard [afifo_scoreboard] Mismatch! Expected=212 Got=147
+# UVM_INFO afifo_scoreboard.sv(78) @ 780: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+#  MATCH = 19   MISMATCH = 4
+# UVM_INFO afifo_scoreboard.sv(79) @ 780: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+#  
+# ***********************************************************
+#  
+# 
+# UVM_INFO afifo_r_passive_monitor.sv(26) @ 780: uvm_test_top.env.r_active_agent.out_mon [afifo_r_passive_monitor] Read monitor rempty = 0, rdata = 147 rinc = 1
+# UVM_INFO afifo_scoreboard.sv(32) @ 790: uvm_test_top.env.scoreboard [afifo_scoreboard] WRITE_IN: wdata=c4 (queue size=16)
+# UVM_INFO afifo_scoreboard.sv(46) @ 790: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+# 
+# 
+# UVM_INFO afifo_w_active_monitor.sv(26) @ 790: uvm_test_top.env.w_active_agent.in_mon [afifo_w_active_monitor] Write monitor wdata = 196, winc = 1 wfull = 0
+# UVM_INFO afifo_scoreboard.sv(36) @ 810: uvm_test_top.env.scoreboard [uvm_test_top.env.scoreboard] FIFO FULL signal is correct
+# UVM_INFO afifo_scoreboard.sv(46) @ 810: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+# 
+# 
+# UVM_INFO afifo_w_active_monitor.sv(26) @ 810: uvm_test_top.env.w_active_agent.in_mon [afifo_w_active_monitor] Write monitor wdata = 196, winc = 1 wfull = 1
+# UVM_INFO afifo_rdriver.sv(29) @ 820: uvm_test_top.env.r_active_agent.driver [afifo_rdriver] Read DRIVER sent to DUT: rinc = 1 
+# UVM_INFO afifo_scoreboard.sv(54) @ 820: uvm_test_top.env.scoreboard [afifo_scoreboard] READ (queue size=15)
+# UVM_ERROR afifo_scoreboard.sv(62) @ 820: uvm_test_top.env.scoreboard [afifo_scoreboard] Mismatch! Expected=147 Got=102
+# UVM_INFO afifo_scoreboard.sv(78) @ 820: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+#  MATCH = 20   MISMATCH = 5
+# UVM_INFO afifo_scoreboard.sv(79) @ 820: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+#  
+# ***********************************************************
+#  
+# 
+# UVM_INFO afifo_r_passive_monitor.sv(26) @ 820: uvm_test_top.env.r_active_agent.out_mon [afifo_r_passive_monitor] Read monitor rempty = 0, rdata = 102 rinc = 1
+# UVM_INFO afifo_scoreboard.sv(32) @ 830: uvm_test_top.env.scoreboard [afifo_scoreboard] WRITE_IN: wdata=c4 (queue size=16)
+# UVM_INFO afifo_scoreboard.sv(46) @ 830: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+# 
+# 
+# UVM_INFO afifo_w_active_monitor.sv(26) @ 830: uvm_test_top.env.w_active_agent.in_mon [afifo_w_active_monitor] Write monitor wdata = 196, winc = 1 wfull = 0
+# UVM_INFO afifo_scoreboard.sv(36) @ 850: uvm_test_top.env.scoreboard [uvm_test_top.env.scoreboard] FIFO FULL signal is correct
+# UVM_INFO afifo_scoreboard.sv(46) @ 850: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+# 
+# 
+# UVM_INFO afifo_w_active_monitor.sv(26) @ 850: uvm_test_top.env.w_active_agent.in_mon [afifo_w_active_monitor] Write monitor wdata = 196, winc = 1 wfull = 1
+# UVM_INFO afifo_rdriver.sv(29) @ 860: uvm_test_top.env.r_active_agent.driver [afifo_rdriver] Read DRIVER sent to DUT: rinc = 1 
+# UVM_INFO afifo_scoreboard.sv(54) @ 860: uvm_test_top.env.scoreboard [afifo_scoreboard] READ (queue size=15)
+# UVM_ERROR afifo_scoreboard.sv(62) @ 860: uvm_test_top.env.scoreboard [afifo_scoreboard] Mismatch! Expected=102 Got=76
+# UVM_INFO afifo_scoreboard.sv(78) @ 860: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+#  MATCH = 21   MISMATCH = 6
+# UVM_INFO afifo_scoreboard.sv(79) @ 860: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+#  
+# ***********************************************************
+#  
+# 
+# UVM_INFO afifo_r_passive_monitor.sv(26) @ 860: uvm_test_top.env.r_active_agent.out_mon [afifo_r_passive_monitor] Read monitor rempty = 0, rdata = 76 rinc = 1
+# UVM_INFO afifo_scoreboard.sv(32) @ 870: uvm_test_top.env.scoreboard [afifo_scoreboard] WRITE_IN: wdata=c4 (queue size=16)
+# UVM_INFO afifo_scoreboard.sv(46) @ 870: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+# 
+# 
+# UVM_INFO afifo_w_active_monitor.sv(26) @ 870: uvm_test_top.env.w_active_agent.in_mon [afifo_w_active_monitor] Write monitor wdata = 196, winc = 1 wfull = 0
+# UVM_INFO afifo_scoreboard.sv(36) @ 890: uvm_test_top.env.scoreboard [uvm_test_top.env.scoreboard] FIFO FULL signal is correct
+# UVM_INFO afifo_scoreboard.sv(46) @ 890: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+# 
+# 
+# UVM_INFO afifo_w_active_monitor.sv(26) @ 890: uvm_test_top.env.w_active_agent.in_mon [afifo_w_active_monitor] Write monitor wdata = 196, winc = 1 wfull = 1
+# UVM_INFO afifo_rdriver.sv(29) @ 900: uvm_test_top.env.r_active_agent.driver [afifo_rdriver] Read DRIVER sent to DUT: rinc = 1 
+# UVM_INFO afifo_scoreboard.sv(54) @ 900: uvm_test_top.env.scoreboard [afifo_scoreboard] READ (queue size=15)
+# UVM_ERROR afifo_scoreboard.sv(62) @ 900: uvm_test_top.env.scoreboard [afifo_scoreboard] Mismatch! Expected=76 Got=38
+# UVM_INFO afifo_scoreboard.sv(78) @ 900: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+#  MATCH = 22   MISMATCH = 7
+# UVM_INFO afifo_scoreboard.sv(79) @ 900: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+#  
+# ***********************************************************
+#  
+# 
+# UVM_INFO afifo_r_passive_monitor.sv(26) @ 900: uvm_test_top.env.r_active_agent.out_mon [afifo_r_passive_monitor] Read monitor rempty = 0, rdata = 38 rinc = 1
+# UVM_INFO afifo_scoreboard.sv(32) @ 910: uvm_test_top.env.scoreboard [afifo_scoreboard] WRITE_IN: wdata=c4 (queue size=16)
+# UVM_INFO afifo_scoreboard.sv(46) @ 910: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+# 
+# 
+# UVM_INFO afifo_w_active_monitor.sv(26) @ 910: uvm_test_top.env.w_active_agent.in_mon [afifo_w_active_monitor] Write monitor wdata = 196, winc = 1 wfull = 0
+# UVM_INFO afifo_scoreboard.sv(36) @ 930: uvm_test_top.env.scoreboard [uvm_test_top.env.scoreboard] FIFO FULL signal is correct
+# UVM_INFO afifo_scoreboard.sv(46) @ 930: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+# 
+# 
+# UVM_INFO afifo_w_active_monitor.sv(26) @ 930: uvm_test_top.env.w_active_agent.in_mon [afifo_w_active_monitor] Write monitor wdata = 196, winc = 1 wfull = 1
+# UVM_INFO afifo_rdriver.sv(29) @ 940: uvm_test_top.env.r_active_agent.driver [afifo_rdriver] Read DRIVER sent to DUT: rinc = 1 
+# UVM_INFO afifo_scoreboard.sv(54) @ 940: uvm_test_top.env.scoreboard [afifo_scoreboard] READ (queue size=15)
+# UVM_ERROR afifo_scoreboard.sv(62) @ 940: uvm_test_top.env.scoreboard [afifo_scoreboard] Mismatch! Expected=38 Got=13
+# UVM_INFO afifo_scoreboard.sv(78) @ 940: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+#  MATCH = 23   MISMATCH = 8
+# UVM_INFO afifo_scoreboard.sv(79) @ 940: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+#  
+# ***********************************************************
+#  
+# 
+# UVM_INFO afifo_r_passive_monitor.sv(26) @ 940: uvm_test_top.env.r_active_agent.out_mon [afifo_r_passive_monitor] Read monitor rempty = 0, rdata = 13 rinc = 1
+# UVM_INFO afifo_scoreboard.sv(32) @ 950: uvm_test_top.env.scoreboard [afifo_scoreboard] WRITE_IN: wdata=c4 (queue size=16)
+# UVM_INFO afifo_scoreboard.sv(46) @ 950: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+# 
+# 
+# UVM_INFO afifo_w_active_monitor.sv(26) @ 950: uvm_test_top.env.w_active_agent.in_mon [afifo_w_active_monitor] Write monitor wdata = 196, winc = 1 wfull = 0
+# UVM_INFO afifo_scoreboard.sv(36) @ 970: uvm_test_top.env.scoreboard [uvm_test_top.env.scoreboard] FIFO FULL signal is correct
+# UVM_INFO afifo_scoreboard.sv(46) @ 970: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+# 
+# 
+# UVM_INFO afifo_w_active_monitor.sv(26) @ 970: uvm_test_top.env.w_active_agent.in_mon [afifo_w_active_monitor] Write monitor wdata = 196, winc = 1 wfull = 1
+# UVM_INFO afifo_rdriver.sv(29) @ 980: uvm_test_top.env.r_active_agent.driver [afifo_rdriver] Read DRIVER sent to DUT: rinc = 1 
+# UVM_INFO afifo_scoreboard.sv(54) @ 980: uvm_test_top.env.scoreboard [afifo_scoreboard] READ (queue size=15)
+# UVM_ERROR afifo_scoreboard.sv(62) @ 980: uvm_test_top.env.scoreboard [afifo_scoreboard] Mismatch! Expected=13 Got=225
+# UVM_INFO afifo_scoreboard.sv(78) @ 980: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+#  MATCH = 24   MISMATCH = 9
+# UVM_INFO afifo_scoreboard.sv(79) @ 980: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+#  
+# ***********************************************************
+#  
+# 
+# UVM_INFO afifo_r_passive_monitor.sv(26) @ 980: uvm_test_top.env.r_active_agent.out_mon [afifo_r_passive_monitor] Read monitor rempty = 0, rdata = 225 rinc = 1
+# UVM_INFO afifo_scoreboard.sv(32) @ 990: uvm_test_top.env.scoreboard [afifo_scoreboard] WRITE_IN: wdata=c4 (queue size=16)
+# UVM_INFO afifo_scoreboard.sv(46) @ 990: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+# 
+# 
+# UVM_INFO afifo_w_active_monitor.sv(26) @ 990: uvm_test_top.env.w_active_agent.in_mon [afifo_w_active_monitor] Write monitor wdata = 196, winc = 1 wfull = 0
+# UVM_INFO afifo_scoreboard.sv(36) @ 1010: uvm_test_top.env.scoreboard [uvm_test_top.env.scoreboard] FIFO FULL signal is correct
+# UVM_INFO afifo_scoreboard.sv(46) @ 1010: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+# 
+# 
+# UVM_INFO afifo_w_active_monitor.sv(26) @ 1010: uvm_test_top.env.w_active_agent.in_mon [afifo_w_active_monitor] Write monitor wdata = 196, winc = 1 wfull = 1
+# UVM_INFO afifo_rdriver.sv(29) @ 1020: uvm_test_top.env.r_active_agent.driver [afifo_rdriver] Read DRIVER sent to DUT: rinc = 1 
+# UVM_INFO afifo_scoreboard.sv(54) @ 1020: uvm_test_top.env.scoreboard [afifo_scoreboard] READ (queue size=15)
+# UVM_ERROR afifo_scoreboard.sv(62) @ 1020: uvm_test_top.env.scoreboard [afifo_scoreboard] Mismatch! Expected=225 Got=147
+# UVM_INFO afifo_scoreboard.sv(78) @ 1020: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+#  MATCH = 25   MISMATCH = 10
+# UVM_INFO afifo_scoreboard.sv(79) @ 1020: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+#  
+# ***********************************************************
+#  
+# 
+# UVM_INFO afifo_r_passive_monitor.sv(26) @ 1020: uvm_test_top.env.r_active_agent.out_mon [afifo_r_passive_monitor] Read monitor rempty = 0, rdata = 147 rinc = 1
+# UVM_INFO afifo_scoreboard.sv(32) @ 1030: uvm_test_top.env.scoreboard [afifo_scoreboard] WRITE_IN: wdata=c4 (queue size=16)
+# UVM_INFO afifo_scoreboard.sv(46) @ 1030: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+# 
+# 
+# UVM_INFO afifo_w_active_monitor.sv(26) @ 1030: uvm_test_top.env.w_active_agent.in_mon [afifo_w_active_monitor] Write monitor wdata = 196, winc = 1 wfull = 0
+# UVM_INFO afifo_scoreboard.sv(36) @ 1050: uvm_test_top.env.scoreboard [uvm_test_top.env.scoreboard] FIFO FULL signal is correct
+# UVM_INFO afifo_scoreboard.sv(46) @ 1050: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+# 
+# 
+# UVM_INFO afifo_w_active_monitor.sv(26) @ 1050: uvm_test_top.env.w_active_agent.in_mon [afifo_w_active_monitor] Write monitor wdata = 196, winc = 1 wfull = 1
+# UVM_INFO afifo_rdriver.sv(29) @ 1060: uvm_test_top.env.r_active_agent.driver [afifo_rdriver] Read DRIVER sent to DUT: rinc = 1 
+# UVM_INFO afifo_scoreboard.sv(54) @ 1060: uvm_test_top.env.scoreboard [afifo_scoreboard] READ (queue size=15)
+# UVM_ERROR afifo_scoreboard.sv(62) @ 1060: uvm_test_top.env.scoreboard [afifo_scoreboard] Mismatch! Expected=147 Got=25
+# UVM_INFO afifo_scoreboard.sv(78) @ 1060: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+#  MATCH = 26   MISMATCH = 11
+# UVM_INFO afifo_scoreboard.sv(79) @ 1060: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+#  
+# ***********************************************************
+#  
+# 
+# UVM_INFO afifo_r_passive_monitor.sv(26) @ 1060: uvm_test_top.env.r_active_agent.out_mon [afifo_r_passive_monitor] Read monitor rempty = 0, rdata = 25 rinc = 1
+# UVM_INFO afifo_scoreboard.sv(32) @ 1070: uvm_test_top.env.scoreboard [afifo_scoreboard] WRITE_IN: wdata=c4 (queue size=16)
+# UVM_INFO afifo_scoreboard.sv(46) @ 1070: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+# 
+# 
+# UVM_INFO afifo_w_active_monitor.sv(26) @ 1070: uvm_test_top.env.w_active_agent.in_mon [afifo_w_active_monitor] Write monitor wdata = 196, winc = 1 wfull = 0
+# UVM_INFO afifo_scoreboard.sv(36) @ 1090: uvm_test_top.env.scoreboard [uvm_test_top.env.scoreboard] FIFO FULL signal is correct
+# UVM_INFO afifo_scoreboard.sv(46) @ 1090: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+# 
+# 
+# UVM_INFO afifo_w_active_monitor.sv(26) @ 1090: uvm_test_top.env.w_active_agent.in_mon [afifo_w_active_monitor] Write monitor wdata = 196, winc = 1 wfull = 1
+# UVM_INFO afifo_rdriver.sv(29) @ 1100: uvm_test_top.env.r_active_agent.driver [afifo_rdriver] Read DRIVER sent to DUT: rinc = 1 
+# UVM_INFO afifo_scoreboard.sv(54) @ 1100: uvm_test_top.env.scoreboard [afifo_scoreboard] READ (queue size=15)
+# UVM_ERROR afifo_scoreboard.sv(62) @ 1100: uvm_test_top.env.scoreboard [afifo_scoreboard] Mismatch! Expected=25 Got=136
+# UVM_INFO afifo_scoreboard.sv(78) @ 1100: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+#  MATCH = 27   MISMATCH = 12
+# UVM_INFO afifo_scoreboard.sv(79) @ 1100: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+#  
+# ***********************************************************
+#  
+# 
+# UVM_INFO afifo_r_passive_monitor.sv(26) @ 1100: uvm_test_top.env.r_active_agent.out_mon [afifo_r_passive_monitor] Read monitor rempty = 0, rdata = 136 rinc = 1
+# UVM_INFO afifo_scoreboard.sv(32) @ 1110: uvm_test_top.env.scoreboard [afifo_scoreboard] WRITE_IN: wdata=c4 (queue size=16)
+# UVM_INFO afifo_scoreboard.sv(46) @ 1110: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+# 
+# 
+# UVM_INFO afifo_w_active_monitor.sv(26) @ 1110: uvm_test_top.env.w_active_agent.in_mon [afifo_w_active_monitor] Write monitor wdata = 196, winc = 1 wfull = 0
+# UVM_INFO afifo_scoreboard.sv(36) @ 1130: uvm_test_top.env.scoreboard [uvm_test_top.env.scoreboard] FIFO FULL signal is correct
+# UVM_INFO afifo_scoreboard.sv(46) @ 1130: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+# 
+# 
+# UVM_INFO afifo_w_active_monitor.sv(26) @ 1130: uvm_test_top.env.w_active_agent.in_mon [afifo_w_active_monitor] Write monitor wdata = 196, winc = 1 wfull = 1
+# UVM_INFO afifo_rdriver.sv(29) @ 1140: uvm_test_top.env.r_active_agent.driver [afifo_rdriver] Read DRIVER sent to DUT: rinc = 1 
+# UVM_INFO afifo_scoreboard.sv(54) @ 1140: uvm_test_top.env.scoreboard [afifo_scoreboard] READ (queue size=15)
+# UVM_ERROR afifo_scoreboard.sv(62) @ 1140: uvm_test_top.env.scoreboard [afifo_scoreboard] Mismatch! Expected=136 Got=18
+# UVM_INFO afifo_scoreboard.sv(78) @ 1140: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+#  MATCH = 28   MISMATCH = 13
+# UVM_INFO afifo_scoreboard.sv(79) @ 1140: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+#  
+# ***********************************************************
+#  
+# 
+# UVM_INFO afifo_r_passive_monitor.sv(26) @ 1140: uvm_test_top.env.r_active_agent.out_mon [afifo_r_passive_monitor] Read monitor rempty = 0, rdata = 18 rinc = 1
+# UVM_INFO afifo_scoreboard.sv(32) @ 1150: uvm_test_top.env.scoreboard [afifo_scoreboard] WRITE_IN: wdata=c4 (queue size=16)
+# UVM_INFO afifo_scoreboard.sv(46) @ 1150: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+# 
+# 
+# UVM_INFO afifo_w_active_monitor.sv(26) @ 1150: uvm_test_top.env.w_active_agent.in_mon [afifo_w_active_monitor] Write monitor wdata = 196, winc = 1 wfull = 0
+# UVM_INFO afifo_scoreboard.sv(36) @ 1170: uvm_test_top.env.scoreboard [uvm_test_top.env.scoreboard] FIFO FULL signal is correct
+# UVM_INFO afifo_scoreboard.sv(46) @ 1170: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+# 
+# 
+# UVM_INFO afifo_w_active_monitor.sv(26) @ 1170: uvm_test_top.env.w_active_agent.in_mon [afifo_w_active_monitor] Write monitor wdata = 196, winc = 1 wfull = 1
+# UVM_INFO afifo_rdriver.sv(29) @ 1180: uvm_test_top.env.r_active_agent.driver [afifo_rdriver] Read DRIVER sent to DUT: rinc = 1 
+# UVM_INFO afifo_scoreboard.sv(54) @ 1180: uvm_test_top.env.scoreboard [afifo_scoreboard] READ (queue size=15)
+# UVM_ERROR afifo_scoreboard.sv(62) @ 1180: uvm_test_top.env.scoreboard [afifo_scoreboard] Mismatch! Expected=18 Got=252
+# UVM_INFO afifo_scoreboard.sv(78) @ 1180: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+#  MATCH = 29   MISMATCH = 14
+# UVM_INFO afifo_scoreboard.sv(79) @ 1180: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+#  
+# ***********************************************************
+#  
+# 
+# UVM_INFO afifo_r_passive_monitor.sv(26) @ 1180: uvm_test_top.env.r_active_agent.out_mon [afifo_r_passive_monitor] Read monitor rempty = 0, rdata = 252 rinc = 1
+# UVM_INFO afifo_scoreboard.sv(32) @ 1190: uvm_test_top.env.scoreboard [afifo_scoreboard] WRITE_IN: wdata=c4 (queue size=16)
+# UVM_INFO afifo_scoreboard.sv(46) @ 1190: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+# 
+# 
+# UVM_INFO afifo_w_active_monitor.sv(26) @ 1190: uvm_test_top.env.w_active_agent.in_mon [afifo_w_active_monitor] Write monitor wdata = 196, winc = 1 wfull = 0
+# UVM_INFO afifo_scoreboard.sv(36) @ 1210: uvm_test_top.env.scoreboard [uvm_test_top.env.scoreboard] FIFO FULL signal is correct
+# UVM_INFO afifo_scoreboard.sv(46) @ 1210: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+# 
+# 
+# UVM_INFO afifo_w_active_monitor.sv(26) @ 1210: uvm_test_top.env.w_active_agent.in_mon [afifo_w_active_monitor] Write monitor wdata = 196, winc = 1 wfull = 1
+# UVM_INFO afifo_rdriver.sv(29) @ 1220: uvm_test_top.env.r_active_agent.driver [afifo_rdriver] Read DRIVER sent to DUT: rinc = 1 
+# UVM_INFO afifo_scoreboard.sv(54) @ 1220: uvm_test_top.env.scoreboard [afifo_scoreboard] READ (queue size=15)
+# UVM_ERROR afifo_scoreboard.sv(62) @ 1220: uvm_test_top.env.scoreboard [afifo_scoreboard] Mismatch! Expected=252 Got=123
+# UVM_INFO afifo_scoreboard.sv(78) @ 1220: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+#  MATCH = 30   MISMATCH = 15
+# UVM_INFO afifo_scoreboard.sv(79) @ 1220: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+#  
+# ***********************************************************
+#  
+# 
+# UVM_INFO afifo_r_passive_monitor.sv(26) @ 1220: uvm_test_top.env.r_active_agent.out_mon [afifo_r_passive_monitor] Read monitor rempty = 0, rdata = 123 rinc = 1
+# UVM_INFO afifo_scoreboard.sv(32) @ 1230: uvm_test_top.env.scoreboard [afifo_scoreboard] WRITE_IN: wdata=c4 (queue size=16)
+# UVM_INFO afifo_scoreboard.sv(46) @ 1230: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+# 
+# 
+# UVM_INFO afifo_w_active_monitor.sv(26) @ 1230: uvm_test_top.env.w_active_agent.in_mon [afifo_w_active_monitor] Write monitor wdata = 196, winc = 1 wfull = 0
+# UVM_INFO afifo_scoreboard.sv(36) @ 1250: uvm_test_top.env.scoreboard [uvm_test_top.env.scoreboard] FIFO FULL signal is correct
+# UVM_INFO afifo_scoreboard.sv(46) @ 1250: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+# 
+# 
+# UVM_INFO afifo_w_active_monitor.sv(26) @ 1250: uvm_test_top.env.w_active_agent.in_mon [afifo_w_active_monitor] Write monitor wdata = 196, winc = 1 wfull = 1
+# UVM_INFO afifo_rdriver.sv(29) @ 1260: uvm_test_top.env.r_active_agent.driver [afifo_rdriver] Read DRIVER sent to DUT: rinc = 1 
+# UVM_INFO afifo_scoreboard.sv(54) @ 1260: uvm_test_top.env.scoreboard [afifo_scoreboard] READ (queue size=15)
+# UVM_ERROR afifo_scoreboard.sv(62) @ 1260: uvm_test_top.env.scoreboard [afifo_scoreboard] Mismatch! Expected=123 Got=196
+# UVM_INFO afifo_scoreboard.sv(78) @ 1260: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+#  MATCH = 31   MISMATCH = 16
+# UVM_INFO afifo_scoreboard.sv(79) @ 1260: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+#  
+# ***********************************************************
+#  
+# 
+# UVM_INFO afifo_r_passive_monitor.sv(26) @ 1260: uvm_test_top.env.r_active_agent.out_mon [afifo_r_passive_monitor] Read monitor rempty = 0, rdata = 196 rinc = 1
+# UVM_INFO afifo_scoreboard.sv(32) @ 1270: uvm_test_top.env.scoreboard [afifo_scoreboard] WRITE_IN: wdata=c4 (queue size=16)
+# UVM_INFO afifo_scoreboard.sv(46) @ 1270: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+# 
+# 
+# UVM_INFO afifo_w_active_monitor.sv(26) @ 1270: uvm_test_top.env.w_active_agent.in_mon [afifo_w_active_monitor] Write monitor wdata = 196, winc = 1 wfull = 0
+# UVM_INFO afifo_scoreboard.sv(36) @ 1290: uvm_test_top.env.scoreboard [uvm_test_top.env.scoreboard] FIFO FULL signal is correct
+# UVM_INFO afifo_scoreboard.sv(46) @ 1290: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+# 
+# 
+# UVM_INFO afifo_w_active_monitor.sv(26) @ 1290: uvm_test_top.env.w_active_agent.in_mon [afifo_w_active_monitor] Write monitor wdata = 196, winc = 1 wfull = 1
+# UVM_INFO afifo_rdriver.sv(29) @ 1300: uvm_test_top.env.r_active_agent.driver [afifo_rdriver] Read DRIVER sent to DUT: rinc = 1 
+# UVM_INFO afifo_scoreboard.sv(54) @ 1300: uvm_test_top.env.scoreboard [afifo_scoreboard] READ (queue size=15)
+# UVM_INFO afifo_scoreboard.sv(57) @ 1300: uvm_test_top.env.scoreboard [afifo_scoreboard] match! Expected=196 Got=196
+# UVM_INFO afifo_scoreboard.sv(78) @ 1300: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+#  MATCH = 33   MISMATCH = 16
+# UVM_INFO afifo_scoreboard.sv(79) @ 1300: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+#  
+# ***********************************************************
+#  
+# 
+# UVM_INFO afifo_r_passive_monitor.sv(26) @ 1300: uvm_test_top.env.r_active_agent.out_mon [afifo_r_passive_monitor] Read monitor rempty = 0, rdata = 196 rinc = 1
+# UVM_INFO afifo_scoreboard.sv(32) @ 1310: uvm_test_top.env.scoreboard [afifo_scoreboard] WRITE_IN: wdata=c4 (queue size=16)
+# UVM_INFO afifo_scoreboard.sv(46) @ 1310: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+# 
+# 
+# UVM_INFO afifo_w_active_monitor.sv(26) @ 1310: uvm_test_top.env.w_active_agent.in_mon [afifo_w_active_monitor] Write monitor wdata = 196, winc = 1 wfull = 0
+# UVM_INFO afifo_scoreboard.sv(36) @ 1330: uvm_test_top.env.scoreboard [uvm_test_top.env.scoreboard] FIFO FULL signal is correct
+# UVM_INFO afifo_scoreboard.sv(46) @ 1330: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+# 
+# 
+# UVM_INFO afifo_w_active_monitor.sv(26) @ 1330: uvm_test_top.env.w_active_agent.in_mon [afifo_w_active_monitor] Write monitor wdata = 196, winc = 1 wfull = 1
+# UVM_INFO afifo_rdriver.sv(29) @ 1340: uvm_test_top.env.r_active_agent.driver [afifo_rdriver] Read DRIVER sent to DUT: rinc = 1 
+# UVM_INFO afifo_scoreboard.sv(54) @ 1340: uvm_test_top.env.scoreboard [afifo_scoreboard] READ (queue size=15)
+# UVM_INFO afifo_scoreboard.sv(57) @ 1340: uvm_test_top.env.scoreboard [afifo_scoreboard] match! Expected=196 Got=196
+# UVM_INFO afifo_scoreboard.sv(78) @ 1340: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+#  MATCH = 35   MISMATCH = 16
+# UVM_INFO afifo_scoreboard.sv(79) @ 1340: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+#  
+# ***********************************************************
+#  
+# 
+# UVM_INFO afifo_r_passive_monitor.sv(26) @ 1340: uvm_test_top.env.r_active_agent.out_mon [afifo_r_passive_monitor] Read monitor rempty = 0, rdata = 196 rinc = 1
+# UVM_INFO afifo_scoreboard.sv(32) @ 1350: uvm_test_top.env.scoreboard [afifo_scoreboard] WRITE_IN: wdata=c4 (queue size=16)
+# UVM_INFO afifo_scoreboard.sv(46) @ 1350: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+# 
+# 
+# UVM_INFO afifo_w_active_monitor.sv(26) @ 1350: uvm_test_top.env.w_active_agent.in_mon [afifo_w_active_monitor] Write monitor wdata = 196, winc = 1 wfull = 0
+# UVM_INFO afifo_scoreboard.sv(36) @ 1370: uvm_test_top.env.scoreboard [uvm_test_top.env.scoreboard] FIFO FULL signal is correct
+# UVM_INFO afifo_scoreboard.sv(46) @ 1370: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+# 
+# 
+# UVM_INFO afifo_w_active_monitor.sv(26) @ 1370: uvm_test_top.env.w_active_agent.in_mon [afifo_w_active_monitor] Write monitor wdata = 196, winc = 1 wfull = 1
+# UVM_INFO afifo_rdriver.sv(29) @ 1380: uvm_test_top.env.r_active_agent.driver [afifo_rdriver] Read DRIVER sent to DUT: rinc = 1 
+# UVM_INFO afifo_scoreboard.sv(54) @ 1380: uvm_test_top.env.scoreboard [afifo_scoreboard] READ (queue size=15)
+# UVM_INFO afifo_scoreboard.sv(57) @ 1380: uvm_test_top.env.scoreboard [afifo_scoreboard] match! Expected=196 Got=196
+# UVM_INFO afifo_scoreboard.sv(78) @ 1380: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+#  MATCH = 37   MISMATCH = 16
+# UVM_INFO afifo_scoreboard.sv(79) @ 1380: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+#  
+# ***********************************************************
+#  
+# 
+# UVM_INFO afifo_r_passive_monitor.sv(26) @ 1380: uvm_test_top.env.r_active_agent.out_mon [afifo_r_passive_monitor] Read monitor rempty = 0, rdata = 196 rinc = 1
+# UVM_INFO afifo_scoreboard.sv(32) @ 1390: uvm_test_top.env.scoreboard [afifo_scoreboard] WRITE_IN: wdata=c4 (queue size=16)
+# UVM_INFO afifo_scoreboard.sv(46) @ 1390: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+# 
+# 
+# UVM_INFO afifo_w_active_monitor.sv(26) @ 1390: uvm_test_top.env.w_active_agent.in_mon [afifo_w_active_monitor] Write monitor wdata = 196, winc = 1 wfull = 0
+# UVM_INFO afifo_scoreboard.sv(36) @ 1410: uvm_test_top.env.scoreboard [uvm_test_top.env.scoreboard] FIFO FULL signal is correct
+# UVM_INFO afifo_scoreboard.sv(46) @ 1410: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+# 
+# 
+# UVM_INFO afifo_w_active_monitor.sv(26) @ 1410: uvm_test_top.env.w_active_agent.in_mon [afifo_w_active_monitor] Write monitor wdata = 196, winc = 1 wfull = 1
+# UVM_INFO afifo_rdriver.sv(29) @ 1420: uvm_test_top.env.r_active_agent.driver [afifo_rdriver] Read DRIVER sent to DUT: rinc = 1 
+# UVM_INFO afifo_scoreboard.sv(54) @ 1420: uvm_test_top.env.scoreboard [afifo_scoreboard] READ (queue size=15)
+# UVM_INFO afifo_scoreboard.sv(57) @ 1420: uvm_test_top.env.scoreboard [afifo_scoreboard] match! Expected=196 Got=196
+# UVM_INFO afifo_scoreboard.sv(78) @ 1420: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+#  MATCH = 39   MISMATCH = 16
+# UVM_INFO afifo_scoreboard.sv(79) @ 1420: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+#  
+# ***********************************************************
+#  
+# 
+# UVM_INFO afifo_r_passive_monitor.sv(26) @ 1420: uvm_test_top.env.r_active_agent.out_mon [afifo_r_passive_monitor] Read monitor rempty = 0, rdata = 196 rinc = 1
+# UVM_INFO afifo_scoreboard.sv(32) @ 1430: uvm_test_top.env.scoreboard [afifo_scoreboard] WRITE_IN: wdata=c4 (queue size=16)
+# UVM_INFO afifo_scoreboard.sv(46) @ 1430: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+# 
+# 
+# UVM_INFO afifo_w_active_monitor.sv(26) @ 1430: uvm_test_top.env.w_active_agent.in_mon [afifo_w_active_monitor] Write monitor wdata = 196, winc = 1 wfull = 0
+# UVM_INFO afifo_scoreboard.sv(36) @ 1450: uvm_test_top.env.scoreboard [uvm_test_top.env.scoreboard] FIFO FULL signal is correct
+# UVM_INFO afifo_scoreboard.sv(46) @ 1450: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+# 
+# 
+# UVM_INFO afifo_w_active_monitor.sv(26) @ 1450: uvm_test_top.env.w_active_agent.in_mon [afifo_w_active_monitor] Write monitor wdata = 196, winc = 1 wfull = 1
+# UVM_INFO afifo_rdriver.sv(29) @ 1460: uvm_test_top.env.r_active_agent.driver [afifo_rdriver] Read DRIVER sent to DUT: rinc = 1 
+# UVM_INFO afifo_scoreboard.sv(54) @ 1460: uvm_test_top.env.scoreboard [afifo_scoreboard] READ (queue size=15)
+# UVM_INFO afifo_scoreboard.sv(57) @ 1460: uvm_test_top.env.scoreboard [afifo_scoreboard] match! Expected=196 Got=196
+# UVM_INFO afifo_scoreboard.sv(78) @ 1460: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+#  MATCH = 41   MISMATCH = 16
+# UVM_INFO afifo_scoreboard.sv(79) @ 1460: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+#  
+# ***********************************************************
+#  
+# 
+# UVM_INFO afifo_r_passive_monitor.sv(26) @ 1460: uvm_test_top.env.r_active_agent.out_mon [afifo_r_passive_monitor] Read monitor rempty = 0, rdata = 196 rinc = 1
+# UVM_INFO afifo_scoreboard.sv(32) @ 1470: uvm_test_top.env.scoreboard [afifo_scoreboard] WRITE_IN: wdata=c4 (queue size=16)
+# UVM_INFO afifo_scoreboard.sv(46) @ 1470: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+# 
+# 
+# UVM_INFO afifo_w_active_monitor.sv(26) @ 1470: uvm_test_top.env.w_active_agent.in_mon [afifo_w_active_monitor] Write monitor wdata = 196, winc = 1 wfull = 0
+# UVM_INFO afifo_scoreboard.sv(36) @ 1490: uvm_test_top.env.scoreboard [uvm_test_top.env.scoreboard] FIFO FULL signal is correct
+# UVM_INFO afifo_scoreboard.sv(46) @ 1490: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+# 
+# 
+# UVM_INFO afifo_w_active_monitor.sv(26) @ 1490: uvm_test_top.env.w_active_agent.in_mon [afifo_w_active_monitor] Write monitor wdata = 196, winc = 1 wfull = 1
+# UVM_INFO afifo_rdriver.sv(29) @ 1500: uvm_test_top.env.r_active_agent.driver [afifo_rdriver] Read DRIVER sent to DUT: rinc = 1 
+# UVM_INFO afifo_scoreboard.sv(54) @ 1500: uvm_test_top.env.scoreboard [afifo_scoreboard] READ (queue size=15)
+# UVM_INFO afifo_scoreboard.sv(57) @ 1500: uvm_test_top.env.scoreboard [afifo_scoreboard] match! Expected=196 Got=196
+# UVM_INFO afifo_scoreboard.sv(78) @ 1500: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+#  MATCH = 43   MISMATCH = 16
+# UVM_INFO afifo_scoreboard.sv(79) @ 1500: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+#  
+# ***********************************************************
+#  
+# 
+# UVM_INFO afifo_r_passive_monitor.sv(26) @ 1500: uvm_test_top.env.r_active_agent.out_mon [afifo_r_passive_monitor] Read monitor rempty = 0, rdata = 196 rinc = 1
+# UVM_INFO afifo_scoreboard.sv(32) @ 1510: uvm_test_top.env.scoreboard [afifo_scoreboard] WRITE_IN: wdata=c4 (queue size=16)
+# UVM_INFO afifo_scoreboard.sv(46) @ 1510: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+# 
+# 
+# UVM_INFO afifo_w_active_monitor.sv(26) @ 1510: uvm_test_top.env.w_active_agent.in_mon [afifo_w_active_monitor] Write monitor wdata = 196, winc = 1 wfull = 0
+# UVM_INFO afifo_scoreboard.sv(36) @ 1530: uvm_test_top.env.scoreboard [uvm_test_top.env.scoreboard] FIFO FULL signal is correct
+# UVM_INFO afifo_scoreboard.sv(46) @ 1530: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+# 
+# 
+# UVM_INFO afifo_w_active_monitor.sv(26) @ 1530: uvm_test_top.env.w_active_agent.in_mon [afifo_w_active_monitor] Write monitor wdata = 196, winc = 1 wfull = 1
+# UVM_INFO afifo_rdriver.sv(29) @ 1540: uvm_test_top.env.r_active_agent.driver [afifo_rdriver] Read DRIVER sent to DUT: rinc = 1 
+# UVM_INFO afifo_scoreboard.sv(54) @ 1540: uvm_test_top.env.scoreboard [afifo_scoreboard] READ (queue size=15)
+# UVM_INFO afifo_scoreboard.sv(57) @ 1540: uvm_test_top.env.scoreboard [afifo_scoreboard] match! Expected=196 Got=196
+# UVM_INFO afifo_scoreboard.sv(78) @ 1540: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+#  MATCH = 45   MISMATCH = 16
+# UVM_INFO afifo_scoreboard.sv(79) @ 1540: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+#  
+# ***********************************************************
+#  
+# 
+# UVM_INFO afifo_r_passive_monitor.sv(26) @ 1540: uvm_test_top.env.r_active_agent.out_mon [afifo_r_passive_monitor] Read monitor rempty = 0, rdata = 196 rinc = 1
+# UVM_INFO afifo_scoreboard.sv(32) @ 1550: uvm_test_top.env.scoreboard [afifo_scoreboard] WRITE_IN: wdata=c4 (queue size=16)
+# UVM_INFO afifo_scoreboard.sv(46) @ 1550: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+# 
+# 
+# UVM_INFO afifo_w_active_monitor.sv(26) @ 1550: uvm_test_top.env.w_active_agent.in_mon [afifo_w_active_monitor] Write monitor wdata = 196, winc = 1 wfull = 0
+# UVM_INFO afifo_scoreboard.sv(36) @ 1570: uvm_test_top.env.scoreboard [uvm_test_top.env.scoreboard] FIFO FULL signal is correct
+# UVM_INFO afifo_scoreboard.sv(46) @ 1570: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+# 
+# 
+# UVM_INFO afifo_w_active_monitor.sv(26) @ 1570: uvm_test_top.env.w_active_agent.in_mon [afifo_w_active_monitor] Write monitor wdata = 196, winc = 1 wfull = 1
+# UVM_INFO afifo_rdriver.sv(29) @ 1580: uvm_test_top.env.r_active_agent.driver [afifo_rdriver] Read DRIVER sent to DUT: rinc = 1 
+# UVM_INFO afifo_scoreboard.sv(54) @ 1580: uvm_test_top.env.scoreboard [afifo_scoreboard] READ (queue size=15)
+# UVM_INFO afifo_scoreboard.sv(57) @ 1580: uvm_test_top.env.scoreboard [afifo_scoreboard] match! Expected=196 Got=196
+# UVM_INFO afifo_scoreboard.sv(78) @ 1580: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+#  MATCH = 47   MISMATCH = 16
+# UVM_INFO afifo_scoreboard.sv(79) @ 1580: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+#  
+# ***********************************************************
+#  
+# 
+# UVM_INFO afifo_r_passive_monitor.sv(26) @ 1580: uvm_test_top.env.r_active_agent.out_mon [afifo_r_passive_monitor] Read monitor rempty = 0, rdata = 196 rinc = 1
+# UVM_INFO afifo_scoreboard.sv(32) @ 1590: uvm_test_top.env.scoreboard [afifo_scoreboard] WRITE_IN: wdata=c4 (queue size=16)
+# UVM_INFO afifo_scoreboard.sv(46) @ 1590: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+# 
+# 
+# UVM_INFO afifo_w_active_monitor.sv(26) @ 1590: uvm_test_top.env.w_active_agent.in_mon [afifo_w_active_monitor] Write monitor wdata = 196, winc = 1 wfull = 0
+# UVM_INFO afifo_scoreboard.sv(36) @ 1610: uvm_test_top.env.scoreboard [uvm_test_top.env.scoreboard] FIFO FULL signal is correct
+# UVM_INFO afifo_scoreboard.sv(46) @ 1610: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+# 
+# 
+# UVM_INFO afifo_w_active_monitor.sv(26) @ 1610: uvm_test_top.env.w_active_agent.in_mon [afifo_w_active_monitor] Write monitor wdata = 196, winc = 1 wfull = 1
+# UVM_INFO afifo_rdriver.sv(29) @ 1620: uvm_test_top.env.r_active_agent.driver [afifo_rdriver] Read DRIVER sent to DUT: rinc = 1 
+# UVM_INFO afifo_scoreboard.sv(54) @ 1620: uvm_test_top.env.scoreboard [afifo_scoreboard] READ (queue size=15)
+# UVM_INFO afifo_scoreboard.sv(57) @ 1620: uvm_test_top.env.scoreboard [afifo_scoreboard] match! Expected=196 Got=196
+# UVM_INFO afifo_scoreboard.sv(78) @ 1620: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+#  MATCH = 49   MISMATCH = 16
+# UVM_INFO afifo_scoreboard.sv(79) @ 1620: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+#  
+# ***********************************************************
+#  
+# 
+# UVM_INFO afifo_r_passive_monitor.sv(26) @ 1620: uvm_test_top.env.r_active_agent.out_mon [afifo_r_passive_monitor] Read monitor rempty = 0, rdata = 196 rinc = 1
+# UVM_INFO afifo_scoreboard.sv(32) @ 1630: uvm_test_top.env.scoreboard [afifo_scoreboard] WRITE_IN: wdata=c4 (queue size=16)
+# UVM_INFO afifo_scoreboard.sv(46) @ 1630: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+# 
+# 
+# UVM_INFO afifo_w_active_monitor.sv(26) @ 1630: uvm_test_top.env.w_active_agent.in_mon [afifo_w_active_monitor] Write monitor wdata = 196, winc = 1 wfull = 0
+# UVM_INFO afifo_scoreboard.sv(36) @ 1650: uvm_test_top.env.scoreboard [uvm_test_top.env.scoreboard] FIFO FULL signal is correct
+# UVM_INFO afifo_scoreboard.sv(46) @ 1650: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+# 
+# 
+# UVM_INFO afifo_w_active_monitor.sv(26) @ 1650: uvm_test_top.env.w_active_agent.in_mon [afifo_w_active_monitor] Write monitor wdata = 196, winc = 1 wfull = 1
+# UVM_INFO afifo_rdriver.sv(29) @ 1660: uvm_test_top.env.r_active_agent.driver [afifo_rdriver] Read DRIVER sent to DUT: rinc = 1 
+# UVM_INFO afifo_scoreboard.sv(54) @ 1660: uvm_test_top.env.scoreboard [afifo_scoreboard] READ (queue size=15)
+# UVM_INFO afifo_scoreboard.sv(57) @ 1660: uvm_test_top.env.scoreboard [afifo_scoreboard] match! Expected=196 Got=196
+# UVM_INFO afifo_scoreboard.sv(78) @ 1660: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+#  MATCH = 51   MISMATCH = 16
+# UVM_INFO afifo_scoreboard.sv(79) @ 1660: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+#  
+# ***********************************************************
+#  
+# 
+# UVM_INFO afifo_r_passive_monitor.sv(26) @ 1660: uvm_test_top.env.r_active_agent.out_mon [afifo_r_passive_monitor] Read monitor rempty = 0, rdata = 196 rinc = 1
+# UVM_INFO afifo_scoreboard.sv(32) @ 1670: uvm_test_top.env.scoreboard [afifo_scoreboard] WRITE_IN: wdata=c4 (queue size=16)
+# UVM_INFO afifo_scoreboard.sv(46) @ 1670: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+# 
+# 
+# UVM_INFO afifo_w_active_monitor.sv(26) @ 1670: uvm_test_top.env.w_active_agent.in_mon [afifo_w_active_monitor] Write monitor wdata = 196, winc = 1 wfull = 0
+# UVM_INFO afifo_scoreboard.sv(36) @ 1690: uvm_test_top.env.scoreboard [uvm_test_top.env.scoreboard] FIFO FULL signal is correct
+# UVM_INFO afifo_scoreboard.sv(46) @ 1690: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+# 
+# 
+# UVM_INFO afifo_w_active_monitor.sv(26) @ 1690: uvm_test_top.env.w_active_agent.in_mon [afifo_w_active_monitor] Write monitor wdata = 196, winc = 1 wfull = 1
+# UVM_INFO afifo_rdriver.sv(29) @ 1700: uvm_test_top.env.r_active_agent.driver [afifo_rdriver] Read DRIVER sent to DUT: rinc = 1 
+# UVM_INFO afifo_scoreboard.sv(54) @ 1700: uvm_test_top.env.scoreboard [afifo_scoreboard] READ (queue size=15)
+# UVM_INFO afifo_scoreboard.sv(57) @ 1700: uvm_test_top.env.scoreboard [afifo_scoreboard] match! Expected=196 Got=196
+# UVM_INFO afifo_scoreboard.sv(78) @ 1700: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+#  MATCH = 53   MISMATCH = 16
+# UVM_INFO afifo_scoreboard.sv(79) @ 1700: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+#  
+# ***********************************************************
+#  
+# 
+# UVM_INFO afifo_r_passive_monitor.sv(26) @ 1700: uvm_test_top.env.r_active_agent.out_mon [afifo_r_passive_monitor] Read monitor rempty = 0, rdata = 196 rinc = 1
+# UVM_INFO afifo_scoreboard.sv(32) @ 1710: uvm_test_top.env.scoreboard [afifo_scoreboard] WRITE_IN: wdata=c4 (queue size=16)
+# UVM_INFO afifo_scoreboard.sv(46) @ 1710: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+# 
+# 
+# UVM_INFO afifo_w_active_monitor.sv(26) @ 1710: uvm_test_top.env.w_active_agent.in_mon [afifo_w_active_monitor] Write monitor wdata = 196, winc = 1 wfull = 0
+# UVM_INFO afifo_scoreboard.sv(36) @ 1730: uvm_test_top.env.scoreboard [uvm_test_top.env.scoreboard] FIFO FULL signal is correct
+# UVM_INFO afifo_scoreboard.sv(46) @ 1730: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+# 
+# 
+# UVM_INFO afifo_w_active_monitor.sv(26) @ 1730: uvm_test_top.env.w_active_agent.in_mon [afifo_w_active_monitor] Write monitor wdata = 196, winc = 1 wfull = 1
+# UVM_INFO afifo_rdriver.sv(29) @ 1740: uvm_test_top.env.r_active_agent.driver [afifo_rdriver] Read DRIVER sent to DUT: rinc = 1 
+# UVM_INFO afifo_scoreboard.sv(54) @ 1740: uvm_test_top.env.scoreboard [afifo_scoreboard] READ (queue size=15)
+# UVM_INFO afifo_scoreboard.sv(57) @ 1740: uvm_test_top.env.scoreboard [afifo_scoreboard] match! Expected=196 Got=196
+# UVM_INFO afifo_scoreboard.sv(78) @ 1740: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+#  MATCH = 55   MISMATCH = 16
+# UVM_INFO afifo_scoreboard.sv(79) @ 1740: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+#  
+# ***********************************************************
+#  
+# 
+# UVM_INFO afifo_r_passive_monitor.sv(26) @ 1740: uvm_test_top.env.r_active_agent.out_mon [afifo_r_passive_monitor] Read monitor rempty = 0, rdata = 196 rinc = 1
+# UVM_INFO afifo_scoreboard.sv(32) @ 1750: uvm_test_top.env.scoreboard [afifo_scoreboard] WRITE_IN: wdata=c4 (queue size=16)
+# UVM_INFO afifo_scoreboard.sv(46) @ 1750: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+# 
+# 
+# UVM_INFO afifo_w_active_monitor.sv(26) @ 1750: uvm_test_top.env.w_active_agent.in_mon [afifo_w_active_monitor] Write monitor wdata = 196, winc = 1 wfull = 0
+# UVM_INFO afifo_scoreboard.sv(36) @ 1770: uvm_test_top.env.scoreboard [uvm_test_top.env.scoreboard] FIFO FULL signal is correct
+# UVM_INFO afifo_scoreboard.sv(46) @ 1770: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+# 
+# 
+# UVM_INFO afifo_w_active_monitor.sv(26) @ 1770: uvm_test_top.env.w_active_agent.in_mon [afifo_w_active_monitor] Write monitor wdata = 196, winc = 1 wfull = 1
+# UVM_INFO afifo_rdriver.sv(29) @ 1780: uvm_test_top.env.r_active_agent.driver [afifo_rdriver] Read DRIVER sent to DUT: rinc = 1 
+# UVM_INFO afifo_scoreboard.sv(54) @ 1780: uvm_test_top.env.scoreboard [afifo_scoreboard] READ (queue size=15)
+# UVM_INFO afifo_scoreboard.sv(57) @ 1780: uvm_test_top.env.scoreboard [afifo_scoreboard] match! Expected=196 Got=196
+# UVM_INFO afifo_scoreboard.sv(78) @ 1780: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+#  MATCH = 57   MISMATCH = 16
+# UVM_INFO afifo_scoreboard.sv(79) @ 1780: uvm_test_top.env.scoreboard [afifo_scoreboard] 
+# ***********************************************************
+#  
+# ***********************************************************
+#  
+# 
+# UVM_INFO afifo_r_passive_monitor.sv(26) @ 1780: uvm_test_top.env.r_active_agent.out_mon [afifo_r_passive_monitor] Read monitor rempty = 0, rdata = 196 rinc = 1
+# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1268) @ 1780: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# UVM_INFO afifo_subscriber.sv(74) @ 1780: uvm_test_top.env.subscriber [afifo_subscriber] [COV] Write_In = 83.33%
+# UVM_INFO afifo_subscriber.sv(75) @ 1780: uvm_test_top.env.subscriber [afifo_subscriber] [COV] Read_Out = 83.33%
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :  498
+# UVM_WARNING :    0
+# UVM_ERROR :   16
+# UVM_FATAL :    0
+# ** Report counts by id
+# [Questa UVM]     2
+# [RNTST]     1
+# [TEST_DONE]     1
+# [afifo_r_passive_monitor]    42
+# [afifo_rdriver]    30
+# [afifo_scoreboard]   274
+# [afifo_subscriber]     2
+# [afifo_w_active_monitor]    88
+# [afifo_wdriver]    30
+# [uvm_test_top.env.scoreboard]    44
+# ** Note: $finish    : /tools/mentor/questasim_10.6c/questasim/linux/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
+#    Time: 1780 ns  Iteration: 68  Instance: /top
+# End time: 11:38:50 on Nov 20,2025, Elapsed time: 0:00:07
+# Errors: 0, Warnings: 0
